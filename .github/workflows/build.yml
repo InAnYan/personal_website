@@ -1,9 +1,11 @@
 name: Build Website
 
+
 on:
   push:
     branches:
       - master
+
 
 jobs:
   build:
