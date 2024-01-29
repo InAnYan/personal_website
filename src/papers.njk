@@ -1,0 +1,22 @@
+---
+permalink: "papers.html"
+eleventyImport:
+  collections: ["paper"]
+---
+
+{% extends "base.njk" %}
+{% block title_part %}
+    papers
+{% endblock title_part %}
+{% block content %}
+    <div class="centered">
+        <h1>Papers</h1>
+    </div>
+    <ul>
+        {% for paper in collections.paper %}
+            <li>
+                <a href="{{ paper.url }}">{{ paper.data.authors }}. {{ paper.data.title }}. {{ paper.data.year }}</a>
+            </li>
+        {% endfor %}
+    </ul>
+{% endblock content %}

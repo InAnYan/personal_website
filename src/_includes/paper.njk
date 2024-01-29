@@ -1,0 +1,24 @@
+{% extends "base.njk" %}
+{% block title_part %}
+    paper
+{% endblock title_part %}
+{% block content %}
+    <div class="centered">
+        <h1>
+            {{ title }}
+        </h1>
+        <p>
+            <strong>Authors</strong>: {{ authors }}.</p>
+        <p>
+            <strong>University</strong>: {{ university }}.</p>
+        <p>
+            <strong>Abstract</strong>: {{ abstract }}</p>
+        <p>
+            <strong>Keywords</strong>: {{ keywords }}.</p>
+        <p>
+            <em class="cit-note">
+                <strong>Note</strong>: For easier navigation and reference, view the citations in the Markdown version on Github.</em>
+        </p>
+    </div>
+    {{ content | safe }}
+{% endblock content %}

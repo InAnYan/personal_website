@@ -1,0 +1,22 @@
+---
+permalink: "projects.html"
+eleventyImport:
+  collections: ["project"]
+---
+
+{% extends "base.njk" %}
+{% block title_part %}
+    projects
+{% endblock title_part %}
+{% block content %}
+    <div class="centered">
+        <h1>Projects</h1>
+    </div>
+    <ul>
+        {% for project in collections.project %}
+            <li>
+                <a href="{{ project.url }}">{{ project.data.name }}: {{ project.data.title }}</a>
+            </li>
+        {% endfor %}
+    </ul>
+{% endblock content %}

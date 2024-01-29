@@ -1,0 +1,11 @@
+{% extends "base.njk" %}
+{% block title_part %}
+    project
+{% endblock title_part %}
+{% block content %}
+    <div class="centered">
+        <h1>Source:
+            <a href="{{ url }}">Github repository</a>.</h1>
+    </div>
+    {{ content | safe }}
+{% endblock content %}

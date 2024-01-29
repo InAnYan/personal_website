@@ -1,0 +1,22 @@
+{
+  "dependencies": {
+    "axios": "^1.6.7"
+  },
+  "name": "personal_website",
+  "version": "1.0.0",
+  "main": ".eleventy.js",
+  "scripts": {
+    "build": "env NODE_ENV=production npx eleventy --pathprefix 'personal_website'",
+    "serve": "npx eleventy --serve",
+    "debug": "DEBUG=* npx eleventy",
+    "test": "jest"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "MIT",
+  "description": "",
+  "devDependencies": {
+    "@11ty/eleventy": "^2.0.1",
+    "eleventy-plugin-mathjax": "^2.0.4"
+  }
+}
