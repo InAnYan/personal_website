@@ -15,7 +15,7 @@ eleventyImport:
     <ul>
         {% for paper in collections.paper %}
             <li>
-                <a href="{{ paper.url }}">{{ paper.data.authors }}. {{ paper.data.title }}. {{ paper.data.year }}</a>
+                <a href="{{ paper.url | url }}">{{ paper.data.authors }}. {{ paper.data.title }}. {{ paper.data.year }}</a>
             </li>
         {% endfor %}
     </ul>

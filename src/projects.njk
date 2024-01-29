@@ -15,7 +15,7 @@ eleventyImport:
     <ul>
         {% for project in collections.project %}
             <li>
-                <a href="{{ project.url }}">{{ project.data.name }}: {{ project.data.title }}</a>
+                <a href="{{ project.url | url }}">{{ project.data.name }}: {{ project.data.title }}</a>
             </li>
         {% endfor %}
     </ul>
