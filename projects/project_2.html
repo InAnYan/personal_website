@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Ruslan Popov's
+            
+    project
+
+        </title>
+        <meta charset="UTF-8">
+        <style>
+            .centered {
+                text-align: center;
+            }
+            .content {
+                margin-left: 20%;
+                margin-right: 20%;
+            }
+            .grammar {
+                text-align: center;
+            }
+            figure {
+                text-align: center;
+            }
+            body {
+                counter-reset: section;
+            }
+            .section {
+                counter-reset: subsection;
+            }
+            .section:before {
+                counter-increment: section;
+                content: counter(section) ". ";
+                font-weight: bold;
+            }
+            .subsection:before {
+                counter-increment: subsection;
+                content: counter(section) "." counter(subsection) ". ";
+            }
+            .csl-entry {
+                display: list-item;
+            }
+            .cit-note {
+                font-size: xx-large;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="centered">
+            <h1>Ruslan Popov's personal website</h1>
+            <p>Student of DNU Faculty of Physics, Electronics and Computer Systems</p>
+        </div>
+        <hr>
+        <div class="centered">
+            <a href="/personal_website/index.html">Home</a>
+            |
+            <a href="https://github.com/InAnYan">Github</a>
+            |
+            <a href="/personal_website/projects.html">Projects</a>
+            |
+            <a href="/personal_website/papers.html">Papers</a>
+        </div>
+        <hr>
+        <div class="content">
+            
+    <div class="centered">
+        <h1>Source:
+            <a href="https://github.com/InAnYan/LispCpp">Github repository</a>.</h1>
+    </div>
+    <h1>Lisp interpreter</h1>
+<p>This project is written for educational purposes.</p>
+<h2>License</h2>
+<p>MIT</p>
+<h2>Language</h2>
+<h3>Value types</h3>
+<ul>
+<li>Integer: <code>123</code>, <code>42</code>, <code>13</code>.
+Signed integer value.</li>
+<li>Float: <code>3.14</code>, <code>9.8</code>.
+Double-preicison floating-point value (IEEE 754).</li>
+<li>String: <code>"abc"</code>, <code>"string"</code>.
+Double-quoted sequence of characters.</li>
+<li>Symbol: <code>lambda</code>, <code>cond</code>, <code>x</code>.
+Sequence of non-whitespace characters (- some other characters).</li>
+<li>Function: lambda or primitive.</li>
+<li>Cons cell.</li>
+<li>NIL: Special kind of value.
+Used as false value and to mark end of list.</li>
+</ul>
+<h3>Evaluation rules</h3>
+<ul>
+<li>Self-evaluable types: integer, float, string, function and nil.</li>
+<li>Evaluation of symbols:
+<ul>
+<li>Retrieve the value of symbol from lexical environment.</li>
+<li>If there is no binding, then get the global binding of the symbol.</li>
+</ul>
+</li>
+<li>Evaluation of cons cells (only proper lists are allowed to be evaluated):
+<ul>
+<li>Evaluate every member of the list.</li>
+<li>The first member of the list should be a function.</li>
+<li>Call the first member of the evaluated list with arguments that are the rest of the evaluated list.</li>
+</ul>
+</li>
+</ul>
+<h3>Capabilities</h3>
+<ul>
+<li>GC.</li>
+<li>No closures.</li>
+<li>Macros.</li>
+<li>Special variables.</li>
+<li><code>&amp;optional</code> and <code>&amp;rest</code> arguments. No keyword arguments.</li>
+<li>Some handling of internal errors with restarts.</li>
+<li>Special forms: <code>quote</code>, <code>if</code>, <code>execute</code>, <code>lambda</code>, <code>macro</code>, <code>define</code>, <code>let-one</code>, <code>macro-expand</code>, <code>cond</code>, <code>redefine</code>.</li>
+<li>Primitives: <code>binary-add</code>, <code>binary-substract</code>, <code>binary-multiply</code>, <code>binary-divide</code>, <code>binary-greater</code>, <code>binary-less</code>, <code>negate</code>, <code>%</code>, <code>round</code>, <code>floor</code>, <code>ceil</code>, <code>truncate</code>, <code>random</code>, <code>eq</code>, <code>eql</code>, <code>apply</code>, <code>print</code>, <code>print-char</code>, <code>print-pretty</code>, <code>print-new-line</code>, <code>load</code>, <code>read-line</code>, <code>read</code>, <code>read-all</code>, <code>first</code>, <code>rest</code>, <code>set-car</code>, <code>set-cdr</code>, <code>cons</code>, <code>list</code>, <code>null-p</code>, <code>cons-p</code>, <code>list-p</code>, <code>callable-p</code>, <code>lambda-p</code>, <code>macro-p</code>, <code>primitive-p</code>, <code>integer-p</code>, <code>float-p</code>, <code>number-p</code>, <code>string-p</code>, <code>symbol-p</code>, <code>eval</code>, <code>system-quit</code>, <code>symbol-intern</code>, <code>internal-get-stack-trace</code>.</li>
+<li>From prelude: <code>binary-append</code>, <code>define-macro</code>, <code>define-function</code>, <code>id</code>, <code>second</code>, <code>third</code>, <code>last-p</code>, <code>plus-p</code>, <code>minus-p</code>, <code>nth</code>, <code>binary-greater-equal</code>, <code>binary-less-equal</code>, <code>when</code>, <code>unless</code>, <code>let</code>, <code>print-ln</code>, <code>not</code>, <code>and</code>, <code>or</code>, <code>call-function</code>, <code>composition</code>, <code>reduce</code>, <code>reduce1</code>, <code>+</code>, <code>-</code>, <code>*</code>, <code>/</code>, <code>complement-eql</code>, <code>&gt;</code>, <code>&gt;=</code>, <code>&lt;</code>, <code>&lt;=</code>, <code>=</code>, <code>/=</code>, <code>equal</code>, <code>map</code>, <code>filter</code>, <code>copy-list</code>, <code>append</code>, <code>reverse</code>, <code>abs</code>, <code>even-p</code>, <code>odd-p</code>, <code>list-length</code>, <code>length</code>, <code>alist-get</code>, <code>plist-get</code>, <code>take</code>, <code>drop</code>, <code>format</code>, <code>quit</code>, <code>string-append</code>.</li>
+</ul>
+<h2>Implementation</h2>
+<h3>Values implementation</h3>
+<p>Lisp value has a two level representation:</p>
+<ul>
+<li>Class <code>Lisp::Value</code> is a sum type between <code>integer</code>, <code>float</code>, <code>primitive</code>, <code>nil</code> and pointer to <code>object</code>. It is implemented with <code>std::variant</code> help.</li>
+<li>Class <code>Lisp::Object</code> is a root class for all referencable types and types that hold more than one field or hold variable sized information.
+The function type is split into <code>Lisp::Primitive</code> and <code>Lisp::LambdaFunction</code>, becasue a primitive is a simple C++ function pointer, but lambda holds two fields of <code>Value</code> (parameters and body).</li>
+</ul>
+<h3>Object management and GC</h3>
+<ul>
+<li>The interpreter uses mark-and-sweep GC algorithm.</li>
+<li>All managed objects should inherit from <code>Lisp::Object</code> and be created via <code>Lisp::MemoryManager::AllocateObject</code>.</li>
+<li>Objects form an intrusive singly-linked linked list.</li>
+<li>All objects contain mark bit and a pointer to the next allocated object.</li>
+<li>The mark stage and deletion are handled by virtual functions.</li>
+<li>The interpreter interns all strings and symbols. But there is a way to make them without interning.</li>
+</ul>
+<h3>Code structure</h3>
+<ul>
+<li>Namespace <code>Lisp::Funcs</code> contains some function that are useful when dealing with Lisp values. These functions don't check types.</li>
+<li>Namespace <code>Lisp::Primitives</code> contains primitive functions.</li>
+<li>The class <code>Lisp::Context</code> is the main class of the interpreter. It's a class that stores intermediate information for functions that operate over Lisp values.</li>
+<li>You will notice, that there are lots of classes. I decided to split different algorithmic parts of the interpreter into classes that hold reference to <code>Lisp::Context</code>, even if they can be implemented as functions that take a <code>Lisp::Context&amp;</code> parameter.</li>
+</ul>
+<h3>About macros</h3>
+<p>Because the definition of data and code in Lisp is deeply interconnected, it's natural to Lisp to have different implementations of syntax checking stage, macro expansion stage with evaluation.</p>
+<p>I don't understand this part fully, because I haven't read many books about interpreters and Lisp. So for now, I decided to perform macro expansion while evaluating Lisp forms and not to check the correctnes of lambda parameters.</p>
+
+
+        </div>
+        <hr> Copyright (c) 2023 Ruslan Popov
+        <p>My email:
+            <a href="mailto:ruslanpopov1512@gmail.com">ruslanpopov1512@gmail.com</a>;
+            <a href="mailto:popov_ro@ffeks.dnu.edu.ua">popov_ro@ffeks.dnu.edu.ua</a>.</p>
+        <p>You can find me everywhere by this nickname:
+            <strong>InAnYan</strong>.</p>
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+        <script id="MathJax-script" async="" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    </body>
+</html>

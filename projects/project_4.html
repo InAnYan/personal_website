@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Ruslan Popov's
+            
+    project
+
+        </title>
+        <meta charset="UTF-8">
+        <style>
+            .centered {
+                text-align: center;
+            }
+            .content {
+                margin-left: 20%;
+                margin-right: 20%;
+            }
+            .grammar {
+                text-align: center;
+            }
+            figure {
+                text-align: center;
+            }
+            body {
+                counter-reset: section;
+            }
+            .section {
+                counter-reset: subsection;
+            }
+            .section:before {
+                counter-increment: section;
+                content: counter(section) ". ";
+                font-weight: bold;
+            }
+            .subsection:before {
+                counter-increment: subsection;
+                content: counter(section) "." counter(subsection) ". ";
+            }
+            .csl-entry {
+                display: list-item;
+            }
+            .cit-note {
+                font-size: xx-large;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="centered">
+            <h1>Ruslan Popov's personal website</h1>
+            <p>Student of DNU Faculty of Physics, Electronics and Computer Systems</p>
+        </div>
+        <hr>
+        <div class="centered">
+            <a href="/personal_website/index.html">Home</a>
+            |
+            <a href="https://github.com/InAnYan">Github</a>
+            |
+            <a href="/personal_website/projects.html">Projects</a>
+            |
+            <a href="/personal_website/papers.html">Papers</a>
+        </div>
+        <hr>
+        <div class="content">
+            
+    <div class="centered">
+        <h1>Source:
+            <a href="https://github.com/InAnYan/BooleanAlgebra1">Github repository</a>.</h1>
+    </div>
+    <h2>Description</h2>
+<p>Simple truth table generator.
+WRITTEN FOR EDUCATIONAL PURPOSES.</p>
+<h2>Output</h2>
+<p>Boolean function truth table generator
+Copyright(C) 2022 Ruslan Popov <a href="mailto:ruslanpopov1512@gmail.com">ruslanpopov1512@gmail.com</a></p>
+<p>Enter operation:
+1. Generate truth table for one function
+2. Compare two functions
+3. Exit
+Enter number [1-3]: 2</p>
+<p>Functions must have same variables
+Enter first function: a<em>b+b</em>c+a*c
+Enter second function: a^b^c</p>
+<p>a<em>b+b</em>c+a*c                a^b^c
+---------------------   ---------------------
+|   a|   b|   c|func|   |   a|   b|   c|func|
+|----|----|----|----|   |----|----|----|----|
+|   0|   0|   0|   0|   |   0|   0|   0|   0|
+|----|----|----|----|   |----|----|----|----|
+|   0|   0|   1|   0|   |   0|   0|   1|   1|
+|----|----|----|----|   |----|----|----|----|
+|   0|   1|   0|   0|   |   0|   1|   0|   1|
+|----|----|----|----|   |----|----|----|----|
+|   0|   1|   1|   1|   |   0|   1|   1|   0|
+|----|----|----|----|   |----|----|----|----|
+|   1|   0|   0|   0|   |   1|   0|   0|   1|
+|----|----|----|----|   |----|----|----|----|
+|   1|   0|   1|   1|   |   1|   0|   1|   0|
+|----|----|----|----|   |----|----|----|----|
+|   1|   1|   0|   1|   |   1|   1|   0|   0|
+|----|----|----|----|   |----|----|----|----|
+|   1|   1|   1|   1|   |   1|   1|   1|   1|
+---------------------   ---------------------</p>
+<h2>Syntax</h2>
+<ul>
+<li>Variables must be one character long.</li>
+<li>All boolean operators must be written explicitly.</li>
+<li>OR: +</li>
+<li>XOR: ^</li>
+<li>AND: * , &amp;</li>
+<li>NOT: ! , ~ , -</li>
+</ul>
+
+
+        </div>
+        <hr> Copyright (c) 2023 Ruslan Popov
+        <p>My email:
+            <a href="mailto:ruslanpopov1512@gmail.com">ruslanpopov1512@gmail.com</a>;
+            <a href="mailto:popov_ro@ffeks.dnu.edu.ua">popov_ro@ffeks.dnu.edu.ua</a>.</p>
+        <p>You can find me everywhere by this nickname:
+            <strong>InAnYan</strong>.</p>
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+        <script id="MathJax-script" async="" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    </body>
+</html>

@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Ruslan Popov's
+            
+    personal website
+
+        </title>
+        <meta charset="UTF-8">
+        <style>
+            .centered {
+                text-align: center;
+            }
+            .content {
+                margin-left: 20%;
+                margin-right: 20%;
+            }
+            .grammar {
+                text-align: center;
+            }
+            figure {
+                text-align: center;
+            }
+            body {
+                counter-reset: section;
+            }
+            .section {
+                counter-reset: subsection;
+            }
+            .section:before {
+                counter-increment: section;
+                content: counter(section) ". ";
+                font-weight: bold;
+            }
+            .subsection:before {
+                counter-increment: subsection;
+                content: counter(section) "." counter(subsection) ". ";
+            }
+            .csl-entry {
+                display: list-item;
+            }
+            .cit-note {
+                font-size: xx-large;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="centered">
+            <h1>Ruslan Popov's personal website</h1>
+            <p>Student of DNU Faculty of Physics, Electronics and Computer Systems</p>
+        </div>
+        <hr>
+        <div class="centered">
+            <a href="/personal_website/index.html">Home</a>
+            |
+            <a href="https://github.com/InAnYan">Github</a>
+            |
+            <a href="/personal_website/projects.html">Projects</a>
+            |
+            <a href="/personal_website/papers.html">Papers</a>
+        </div>
+        <hr>
+        <div class="content">
+            
+    <p>Interesting in programming, computer architecture, studying, researching, and playing computer games.</p>
+    <p>Checkout my papers and projects!</p>
+    <p>In case you wondering why this website looks so strange, it's because I copy the legends 
+                (<a href="https://norvig.com">Peter Norvig</a>,
+        <a href="https://stallman.org">Richard Stallman</a>,
+        <a href="https://www.cs.utexas.edu/users/novak/index.html">Gordon S. Novak Jr.</a>, and more).</p>
+
+        </div>
+        <hr> Copyright (c) 2023 Ruslan Popov
+        <p>My email:
+            <a href="mailto:ruslanpopov1512@gmail.com">ruslanpopov1512@gmail.com</a>;
+            <a href="mailto:popov_ro@ffeks.dnu.edu.ua">popov_ro@ffeks.dnu.edu.ua</a>.</p>
+        <p>You can find me everywhere by this nickname:
+            <strong>InAnYan</strong>.</p>
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+        <script id="MathJax-script" async="" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    </body>
+</html>

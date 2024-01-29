@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Ruslan Popov's
+            
+    project
+
+        </title>
+        <meta charset="UTF-8">
+        <style>
+            .centered {
+                text-align: center;
+            }
+            .content {
+                margin-left: 20%;
+                margin-right: 20%;
+            }
+            .grammar {
+                text-align: center;
+            }
+            figure {
+                text-align: center;
+            }
+            body {
+                counter-reset: section;
+            }
+            .section {
+                counter-reset: subsection;
+            }
+            .section:before {
+                counter-increment: section;
+                content: counter(section) ". ";
+                font-weight: bold;
+            }
+            .subsection:before {
+                counter-increment: subsection;
+                content: counter(section) "." counter(subsection) ". ";
+            }
+            .csl-entry {
+                display: list-item;
+            }
+            .cit-note {
+                font-size: xx-large;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="centered">
+            <h1>Ruslan Popov's personal website</h1>
+            <p>Student of DNU Faculty of Physics, Electronics and Computer Systems</p>
+        </div>
+        <hr>
+        <div class="centered">
+            <a href="/personal_website/index.html">Home</a>
+            |
+            <a href="https://github.com/InAnYan">Github</a>
+            |
+            <a href="/personal_website/projects.html">Projects</a>
+            |
+            <a href="/personal_website/papers.html">Papers</a>
+        </div>
+        <hr>
+        <div class="content">
+            
+    <div class="centered">
+        <h1>Source:
+            <a href="https://github.com/InAnYan/LoxCpp">Github repository</a>.</h1>
+    </div>
+    <h1>Lox bytecode interpreter implemented in C++</h1>
+<p>Written for educational purposes and with book <a href="https://craftinginterpreters.com/">Crafting interpreters</a>.
+I've tried to use safe C++ constructs and data type with OOP. And, of course, without global varaibles.
+This is not an exact same replica with <code>clox</code>, but it interprets the same language.</p>
+<p>The code is messy and I want to make my own language (<em>well, another replica of JS</em>), so wait for <code>Loop</code>!</p>
+<h1>Features</h1>
+<p><em>They are undone, actually.</em></p>
+<ul>
+<li>Writing and reading chunks. <em>Undone</em>.</li>
+<li>Optimization. <em>Only some kind of constant folding</em>.</li>
+<li>Verifying. <em>When I've added jumps and loops it cracked</em>.</li>
+<li>Tests. <em>When functions appeared, tests become very hard to write</em>.</li>
+</ul>
+<h1>Differences from Lox and <code>clox</code></h1>
+<ul>
+<li>Natives have arity</li>
+<li>GC allocates only objects. Dynamic arrays are implemented with <code>std::vector</code>. And so on.</li>
+<li>Unimplemented GC when <code>StressGC</code> is off. <em>Because GC can't track how many bytes the program uses, but it can track
+living objects count</em>.</li>
+<li>There is only <code>Closure</code> object, no <code>Function</code>.</li>
+<li><code>Upvalue</code> objects holds an <code>std::vector</code> of upvalues.</li>
+<li>GC can be switched on or off. <em>Is it a good feature?</em></li>
+<li>There are <code>PrintFlags</code>. The only use for them is to print string as it is, or with quotes and escaped symbols.</li>
+<li>The code heavily relies on macros that use macros. (Link)[]</li>
+</ul>
+<h1>Project structure</h1>
+<p>This repository contains three projects:</p>
+<ol>
+<li>Lox VM library <code>LoxLib/</code>. It contains two folders: <code>include</code> for public headers and <code>src</code> for implementation.</li>
+<li>Lox VM runner <code>LoxInterpreter/</code> (<em>a bad name perhaps</em>). It is the main file that runs REPL or a file. It contains <code>src</code> directory where it is implemented.</li>
+<li>Lox tests <code>LoxGoogleTests</code>. It contains folder <code>src</code>, where the tests lie. There is no main file, so they are intended to run with <code>gtest_main</code>.</li>
+</ol>
+
+
+        </div>
+        <hr> Copyright (c) 2023 Ruslan Popov
+        <p>My email:
+            <a href="mailto:ruslanpopov1512@gmail.com">ruslanpopov1512@gmail.com</a>;
+            <a href="mailto:popov_ro@ffeks.dnu.edu.ua">popov_ro@ffeks.dnu.edu.ua</a>.</p>
+        <p>You can find me everywhere by this nickname:
+            <strong>InAnYan</strong>.</p>
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+        <script id="MathJax-script" async="" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    </body>
+</html>

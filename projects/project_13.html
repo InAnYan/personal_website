@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Ruslan Popov's
+            
+    project
+
+        </title>
+        <meta charset="UTF-8">
+        <style>
+            .centered {
+                text-align: center;
+            }
+            .content {
+                margin-left: 20%;
+                margin-right: 20%;
+            }
+            .grammar {
+                text-align: center;
+            }
+            figure {
+                text-align: center;
+            }
+            body {
+                counter-reset: section;
+            }
+            .section {
+                counter-reset: subsection;
+            }
+            .section:before {
+                counter-increment: section;
+                content: counter(section) ". ";
+                font-weight: bold;
+            }
+            .subsection:before {
+                counter-increment: subsection;
+                content: counter(section) "." counter(subsection) ". ";
+            }
+            .csl-entry {
+                display: list-item;
+            }
+            .cit-note {
+                font-size: xx-large;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="centered">
+            <h1>Ruslan Popov's personal website</h1>
+            <p>Student of DNU Faculty of Physics, Electronics and Computer Systems</p>
+        </div>
+        <hr>
+        <div class="centered">
+            <a href="/personal_website/index.html">Home</a>
+            |
+            <a href="https://github.com/InAnYan">Github</a>
+            |
+            <a href="/personal_website/projects.html">Projects</a>
+            |
+            <a href="/personal_website/papers.html">Papers</a>
+        </div>
+        <hr>
+        <div class="content">
+            
+    <div class="centered">
+        <h1>Source:
+            <a href="https://github.com/InAnYan/WebDesignGenerator">Github repository</a>.</h1>
+    </div>
+    <h1>Генератор звітів для дисципліни "Програмні та інтсрументальні засоби веб-дизайну"</h1>
+<h2>Можливості</h2>
+<ul>
+<li>Генерування титулки.</li>
+<li>Вставка вихідного коду.</li>
+<li>Генерація зображення сторінки.</li>
+</ul>
+<h2>Вимоги перед використанням</h2>
+<ul>
+<li>Python.</li>
+<li><code>pip install docx</code>.</li>
+<li><code>pip install python-docx</code>.</li>
+<li><code>pip install html2image</code>.</li>
+<li>Chrome або Chromium.</li>
+</ul>
+<h2>Використання</h2>
+<pre><code class="language-sh">python3 zvit_maker.py group name n path_in path_out
+</code></pre>
+<p>Де:</p>
+<ul>
+<li><code>group</code>: строка групи без пробілів та лапок: <code>КІ-23-1</code>, <code>КІ-23-2</code>.</li>
+<li><code>name</code>: ім'я студента у форматі <code>'Прізвище ІніціалиБезКрапокТаПробілів'</code>: <code>'Попов РО'</code>.</li>
+<li><code>n</code>: номер практичної роботи.</li>
+<li><code>path_in</code>: шлях до файлів практичної роботи. Ці файли мають бути іменованими за спеціальними правилами, які описані нижче.</li>
+<li><code>path_out</code>: назва файлу, в якому буде збережений звіт практичної роботи.</li>
+</ul>
+<p>Приклад: <code>python3 zvit_maker.py КІ-23-1 'Попов РО' 3 third N3.docx</code>.</p>
+<h2>Правила іменування файлів завдань практичної роботи</h2>
+<p>Назва файлу має відповідати такому правилу, записаному як регулярний вираз: <code>[0-9](_[0-9])*\.html</code>.
+Приклади: <code>1.html</code>, <code>2.html</code>, <code>1_2.html</code>, <code>3_1.html</code>, і так далі.</p>
+<h2>Примітка</h2>
+<p>Програма може генерувати тимчасові файли. Вона їх не видаляє.</p>
+<p>Писалося дуже швидко, перевірка помилок не гарантується.</p>
+
+
+        </div>
+        <hr> Copyright (c) 2023 Ruslan Popov
+        <p>My email:
+            <a href="mailto:ruslanpopov1512@gmail.com">ruslanpopov1512@gmail.com</a>;
+            <a href="mailto:popov_ro@ffeks.dnu.edu.ua">popov_ro@ffeks.dnu.edu.ua</a>.</p>
+        <p>You can find me everywhere by this nickname:
+            <strong>InAnYan</strong>.</p>
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+        <script id="MathJax-script" async="" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    </body>
+</html>

@@ -1,0 +1,1069 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Ruslan Popov's
+            
+    paper
+
+        </title>
+        <meta charset="UTF-8">
+        <style>
+            .centered {
+                text-align: center;
+            }
+            .content {
+                margin-left: 20%;
+                margin-right: 20%;
+            }
+            .grammar {
+                text-align: center;
+            }
+            figure {
+                text-align: center;
+            }
+            body {
+                counter-reset: section;
+            }
+            .section {
+                counter-reset: subsection;
+            }
+            .section:before {
+                counter-increment: section;
+                content: counter(section) ". ";
+                font-weight: bold;
+            }
+            .subsection:before {
+                counter-increment: subsection;
+                content: counter(section) "." counter(subsection) ". ";
+            }
+            .csl-entry {
+                display: list-item;
+            }
+            .cit-note {
+                font-size: xx-large;
+            }
+        </style>
+    <style id="MJX-SVG-styles">
+mjx-container[jax="SVG"] {
+  direction: ltr;
+}
+
+mjx-container[jax="SVG"] > svg {
+  overflow: visible;
+  min-height: 1px;
+  min-width: 1px;
+}
+
+mjx-container[jax="SVG"] > svg a {
+  fill: blue;
+  stroke: blue;
+}
+
+mjx-assistive-mml {
+  position: absolute !important;
+  top: 0px;
+  left: 0px;
+  clip: rect(1px, 1px, 1px, 1px);
+  padding: 1px 0px 0px 0px !important;
+  border: 0px !important;
+  display: block !important;
+  width: auto !important;
+  overflow: hidden !important;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+mjx-assistive-mml[display="block"] {
+  width: 100% !important;
+}
+
+mjx-container[jax="SVG"][display="true"] {
+  display: block;
+  text-align: center;
+  margin: 1em 0;
+}
+
+mjx-container[jax="SVG"][display="true"][width="full"] {
+  display: flex;
+}
+
+mjx-container[jax="SVG"][justify="left"] {
+  text-align: left;
+}
+
+mjx-container[jax="SVG"][justify="right"] {
+  text-align: right;
+}
+
+g[data-mml-node="merror"] > g {
+  fill: red;
+  stroke: red;
+}
+
+g[data-mml-node="merror"] > rect[data-background] {
+  fill: yellow;
+  stroke: none;
+}
+
+g[data-mml-node="mtable"] > line[data-line], svg[data-table] > g > line[data-line] {
+  stroke-width: 70px;
+  fill: none;
+}
+
+g[data-mml-node="mtable"] > rect[data-frame], svg[data-table] > g > rect[data-frame] {
+  stroke-width: 70px;
+  fill: none;
+}
+
+g[data-mml-node="mtable"] > .mjx-dashed, svg[data-table] > g > .mjx-dashed {
+  stroke-dasharray: 140;
+}
+
+g[data-mml-node="mtable"] > .mjx-dotted, svg[data-table] > g > .mjx-dotted {
+  stroke-linecap: round;
+  stroke-dasharray: 0,140;
+}
+
+g[data-mml-node="mtable"] > g > svg {
+  overflow: visible;
+}
+
+[jax="SVG"] mjx-tool {
+  display: inline-block;
+  position: relative;
+  width: 0;
+  height: 0;
+}
+
+[jax="SVG"] mjx-tool > mjx-tip {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+mjx-tool > mjx-tip {
+  display: inline-block;
+  padding: .2em;
+  border: 1px solid #888;
+  font-size: 70%;
+  background-color: #F8F8F8;
+  color: black;
+  box-shadow: 2px 2px 5px #AAAAAA;
+}
+
+g[data-mml-node="maction"][data-toggle] {
+  cursor: pointer;
+}
+
+mjx-status {
+  display: block;
+  position: fixed;
+  left: 1em;
+  bottom: 1em;
+  min-width: 25%;
+  padding: .2em .4em;
+  border: 1px solid #888;
+  font-size: 90%;
+  background-color: #F8F8F8;
+  color: black;
+}
+
+foreignObject[data-mjx-xml] {
+  font-family: initial;
+  line-height: normal;
+  overflow: visible;
+}
+
+mjx-container[jax="SVG"] path[data-c], mjx-container[jax="SVG"] use[data-c] {
+  stroke-width: 3;
+}
+</style></head>
+    <body>
+        <div class="centered">
+            <h1>Ruslan Popov's personal website</h1>
+            <p>Student of DNU Faculty of Physics, Electronics and Computer Systems</p>
+        </div>
+        <hr>
+        <div class="centered">
+            <a href="/personal_website/index.html">Home</a>
+            |
+            <a href="https://github.com/InAnYan">Github</a>
+            |
+            <a href="/personal_website/projects.html">Projects</a>
+            |
+            <a href="/personal_website/papers.html">Papers</a>
+        </div>
+        <hr>
+        <div class="content">
+            
+    <div class="centered">
+        <h1>
+            Automatic solving of physics word problems
+        </h1>
+        <p>
+            <strong>Authors</strong>: Ruslan Popov, Nadiia Karpenko.</p>
+        <p>
+            <strong>University</strong>: Oles Honchar Dnipro National University (Ukraine).</p>
+        <p>
+            <strong>Abstract</strong>: We present a system that solves simple physics
+word problems (PWPs) stated in the English language. PWP is an
+interesting subfield of word problems that is not studied as deeply as
+math word problems (MWPs). We described the process of analyzing English
+text, the representation of problems, and algorithms for finding the
+solution. We have researched the types of PWPs and described their
+problem-solving strategies. We have noted the peculiarities that PWPs
+introduce in comparison to MWPs. We discussed the capabilities and
+limitations of our implementation and proposed future research areas.
+</p>
+        <p>
+            <strong>Keywords</strong>: physics word problems, automatic problem solving, artificial intelligence, natural language processing, natural language understanding.</p>
+        <p>
+            <em class="cit-note">
+                <strong>Note</strong>: For easier navigation and reference, view the citations in the Markdown version on Github.</em>
+        </p>
+    </div>
+    
+<h1 id="introduction" class="section">INTRODUCTION</h1>
+<p>With the publication of Large Language Models (LLMs), students are tempted to solve their school problems by using
+    AIs such as ChatGPT, Bard, etc. However, recent studies show that LLMs cannot solve physics problems well
+    <span class="citation" data-cites="frust_soc">(Gregorcic and Pendrill 2023)</span>. Indeed, LLMs are neural models that
+        try to predict the next word of the answer probabilistically. Thus, neither students nor engineers can trust the output
+        of the model.</p>
+<p>Solving word problems is a classic and challenging field of AI programming. The automatic solving of such problems
+    involves natural language processing, a well-formed problem representation, and a good problem-solving strategy.</p>
+<p>In this paper, we want to study the automatic solving of physics word
+                    problems.</p>
+<p>There are several reasons for the relevance of our paper:</p>
+<ul>
+    <li>
+        <p>The field of word problem solving is very diverse, and its research has not developed as quickly as the research, for
+            example, of neural networks.</p>
+    </li>
+    <li>
+        <p>A significant research gap exists in understanding how to solve word problems within specific scientific fields (such
+            as physics, chemistry, etc.) , whereas MWP solving has been a well-established area of study.</p>
+    </li>
+    <li>
+        <p>Physics word problems bring new challenges in automatic solving that require specific techniques to overcome
+            them.</p>
+    </li>
+    <li>
+        <p>While many arithmetic word problem data sets exist, there is no widely used collection of physics
+            problems.</p>
+    </li>
+</ul>
+<p>We want to revive the classic AI approach where programs solve human problems in a correct and deterministic way,
+    where programs utilize the field knowledge, rules, and definitions to give a strict and accurate answer.</p>
+<h1 id="literature-analysis" class="section">LITERATURE ANALYSIS</h1>
+<h2 id="student-pioneer-ai-program" class="subsection">STUDENT: Pioneer AI program</h2>
+<p>The D. Bobrow’s STUDENT program is one of the first AI programs to understand natural language, showing promising
+    results
+    <span class="citation" data-cites="student">(Bobrow 1964)</span>. The program solves algebraic word problems stated in
+        English. An example of the problem that STUDENT can handle:</p>
+<p>“<em>If the number of customers Tom gets is twice the square of 20% of the number of advertisements he runs, and the
+    number of advertisements is 45, then what is the number of customers Tom gets?</em>””</p>
+<p>The STUDENT approach is straightforward: the problem is represented as a set of simultaneous equations; the solution
+    of the problem is the solution for that set. The program used pattern matching and kernel sentence theory to transform
+    English text into a set of equations. For the example above, STUDENT would generate this system:</p>
+<p>
+    <span class="math display"><mjx-container class="MathJax" jax="SVG" display="true" style="position: relative;"><svg style="vertical-align: -3.375ex;" xmlns="http://www.w3.org/2000/svg" width="57.853ex" height="7.882ex" role="img" focusable="false" viewBox="0 -1992 25571 3483.9" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true"><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)"><g data-mml-node="math"><g data-mml-node="mrow"><g data-mml-node="mo"><use data-c="23A7" xlink:href="#MJX-TEX-S4-23A7" transform="translate(0,1093)"></use><use data-c="23A9" xlink:href="#MJX-TEX-S4-23A9" transform="translate(0,-593)"></use><use data-c="23A8" xlink:href="#MJX-TEX-S4-23A8" transform="translate(0,0)"></use><svg width="889" height="123" y="1060" x="0" viewBox="0 21.7 889 123"><use data-c="23AA" xlink:href="#MJX-TEX-S4-23AA" transform="scale(1,0.605)"></use></svg><svg width="889" height="123" y="-683" x="0" viewBox="0 21.7 889 123"><use data-c="23AA" xlink:href="#MJX-TEX-S4-23AA" transform="scale(1,0.605)"></use></svg></g><g data-mml-node="mtable" transform="translate(889,0)"><g data-mml-node="mtr" transform="translate(0,1158)"><g data-mml-node="mtd"><g data-mml-node="mo"><use data-c="28" xlink:href="#MJX-TEX-N-28"></use></g><g data-mml-node="mi" transform="translate(389,0)"><use data-c="1D436" xlink:href="#MJX-TEX-I-1D436"></use></g><g data-mml-node="mi" transform="translate(1149,0)"><use data-c="1D448" xlink:href="#MJX-TEX-I-1D448"></use></g><g data-mml-node="mi" transform="translate(1916,0)"><use data-c="1D446" xlink:href="#MJX-TEX-I-1D446"></use></g><g data-mml-node="mi" transform="translate(2561,0)"><use data-c="1D447" xlink:href="#MJX-TEX-I-1D447"></use></g><g data-mml-node="mi" transform="translate(3265,0)"><use data-c="1D442" xlink:href="#MJX-TEX-I-1D442"></use></g><g data-mml-node="mi" transform="translate(4028,0)"><use data-c="1D440" xlink:href="#MJX-TEX-I-1D440"></use></g><g data-mml-node="mi" transform="translate(5079,0)"><use data-c="1D438" xlink:href="#MJX-TEX-I-1D438"></use></g><g data-mml-node="mi" transform="translate(5843,0)"><use data-c="1D445" xlink:href="#MJX-TEX-I-1D445"></use></g><g data-mml-node="mi" transform="translate(6602,0)"><use data-c="1D446" xlink:href="#MJX-TEX-I-1D446"></use></g><g data-mml-node="mo" transform="translate(7247,0)"><use data-c="29" xlink:href="#MJX-TEX-N-29"></use></g><g data-mml-node="mo" transform="translate(7913.8,0)"><use data-c="3D" xlink:href="#MJX-TEX-N-3D"></use></g><g data-mml-node="mn" transform="translate(8969.6,0)"><use data-c="32" xlink:href="#MJX-TEX-N-32"></use></g><g data-mml-node="mo" transform="translate(9691.8,0)"><use data-c="2217" xlink:href="#MJX-TEX-N-2217"></use></g><g data-mml-node="mo" transform="translate(10414,0)"><use data-c="28" xlink:href="#MJX-TEX-N-28"></use></g><g data-mml-node="mn" transform="translate(10803,0)"><use data-c="30" xlink:href="#MJX-TEX-N-30"></use><use data-c="2E" xlink:href="#MJX-TEX-N-2E" transform="translate(500,0)"></use><use data-c="32" xlink:href="#MJX-TEX-N-32" transform="translate(778,0)"></use></g><g data-mml-node="mo" transform="translate(12303.2,0)"><use data-c="2B" xlink:href="#MJX-TEX-N-2B"></use></g><g data-mml-node="mo" transform="translate(13303.4,0)"><use data-c="28" xlink:href="#MJX-TEX-N-28"></use></g><g data-mml-node="mi" transform="translate(13692.4,0)"><use data-c="1D434" xlink:href="#MJX-TEX-I-1D434"></use></g><g data-mml-node="mi" transform="translate(14442.4,0)"><use data-c="1D437" xlink:href="#MJX-TEX-I-1D437"></use></g><g data-mml-node="mi" transform="translate(15270.4,0)"><use data-c="1D449" xlink:href="#MJX-TEX-I-1D449"></use></g><g data-mml-node="mi" transform="translate(16039.4,0)"><use data-c="1D438" xlink:href="#MJX-TEX-I-1D438"></use></g><g data-mml-node="mi" transform="translate(16803.4,0)"><use data-c="1D445" xlink:href="#MJX-TEX-I-1D445"></use></g><g data-mml-node="mi" transform="translate(17562.4,0)"><use data-c="1D447" xlink:href="#MJX-TEX-I-1D447"></use></g><g data-mml-node="mi" transform="translate(18266.4,0)"><use data-c="1D43C" xlink:href="#MJX-TEX-I-1D43C"></use></g><g data-mml-node="mi" transform="translate(18770.4,0)"><use data-c="1D446" xlink:href="#MJX-TEX-I-1D446"></use></g><g data-mml-node="mi" transform="translate(19415.4,0)"><use data-c="1D440" xlink:href="#MJX-TEX-I-1D440"></use></g><g data-mml-node="mi" transform="translate(20466.4,0)"><use data-c="1D438" xlink:href="#MJX-TEX-I-1D438"></use></g><g data-mml-node="mi" transform="translate(21230.4,0)"><use data-c="1D441" xlink:href="#MJX-TEX-I-1D441"></use></g><g data-mml-node="mi" transform="translate(22118.4,0)"><use data-c="1D447" xlink:href="#MJX-TEX-I-1D447"></use></g><g data-mml-node="mi" transform="translate(22822.4,0)"><use data-c="1D446" xlink:href="#MJX-TEX-I-1D446"></use></g><g data-mml-node="mo" transform="translate(23467.4,0)"><use data-c="29" xlink:href="#MJX-TEX-N-29"></use></g><g data-mml-node="msup" transform="translate(23856.4,0)"><g data-mml-node="mo"><use data-c="29" xlink:href="#MJX-TEX-N-29"></use></g><g data-mml-node="mn" transform="translate(422,363) scale(0.707)"><use data-c="32" xlink:href="#MJX-TEX-N-32"></use></g></g></g></g><g data-mml-node="mtr" transform="translate(0,-42)"><g data-mml-node="mtd"><g data-mml-node="mo"><use data-c="28" xlink:href="#MJX-TEX-N-28"></use></g><g data-mml-node="mi" transform="translate(389,0)"><use data-c="1D434" xlink:href="#MJX-TEX-I-1D434"></use></g><g data-mml-node="mi" transform="translate(1139,0)"><use data-c="1D437" xlink:href="#MJX-TEX-I-1D437"></use></g><g data-mml-node="mi" transform="translate(1967,0)"><use data-c="1D449" xlink:href="#MJX-TEX-I-1D449"></use></g><g data-mml-node="mi" transform="translate(2736,0)"><use data-c="1D438" xlink:href="#MJX-TEX-I-1D438"></use></g><g data-mml-node="mi" transform="translate(3500,0)"><use data-c="1D445" xlink:href="#MJX-TEX-I-1D445"></use></g><g data-mml-node="mi" transform="translate(4259,0)"><use data-c="1D447" xlink:href="#MJX-TEX-I-1D447"></use></g><g data-mml-node="mi" transform="translate(4963,0)"><use data-c="1D43C" xlink:href="#MJX-TEX-I-1D43C"></use></g><g data-mml-node="mi" transform="translate(5467,0)"><use data-c="1D446" xlink:href="#MJX-TEX-I-1D446"></use></g><g data-mml-node="mi" transform="translate(6112,0)"><use data-c="1D440" xlink:href="#MJX-TEX-I-1D440"></use></g><g data-mml-node="mi" transform="translate(7163,0)"><use data-c="1D438" xlink:href="#MJX-TEX-I-1D438"></use></g><g data-mml-node="mi" transform="translate(7927,0)"><use data-c="1D441" xlink:href="#MJX-TEX-I-1D441"></use></g><g data-mml-node="mi" transform="translate(8815,0)"><use data-c="1D447" xlink:href="#MJX-TEX-I-1D447"></use></g><g data-mml-node="mi" transform="translate(9519,0)"><use data-c="1D446" xlink:href="#MJX-TEX-I-1D446"></use></g><g data-mml-node="mo" transform="translate(10164,0)"><use data-c="29" xlink:href="#MJX-TEX-N-29"></use></g><g data-mml-node="mo" transform="translate(10830.8,0)"><use data-c="3D" xlink:href="#MJX-TEX-N-3D"></use></g><g data-mml-node="mn" transform="translate(11886.6,0)"><use data-c="34" xlink:href="#MJX-TEX-N-34"></use><use data-c="35" xlink:href="#MJX-TEX-N-35" transform="translate(500,0)"></use></g></g></g><g data-mml-node="mtr" transform="translate(0,-1242)"><g data-mml-node="mtd"><g data-mml-node="mo"><use data-c="3F" xlink:href="#MJX-TEX-N-3F"></use></g><g data-mml-node="mo" transform="translate(749.8,0)"><use data-c="3D" xlink:href="#MJX-TEX-N-3D"></use></g><g data-mml-node="mo" transform="translate(1805.6,0)"><use data-c="28" xlink:href="#MJX-TEX-N-28"></use></g><g data-mml-node="mi" transform="translate(2194.6,0)"><use data-c="1D436" xlink:href="#MJX-TEX-I-1D436"></use></g><g data-mml-node="mi" transform="translate(2954.6,0)"><use data-c="1D448" xlink:href="#MJX-TEX-I-1D448"></use></g><g data-mml-node="mi" transform="translate(3721.6,0)"><use data-c="1D446" xlink:href="#MJX-TEX-I-1D446"></use></g><g data-mml-node="mi" transform="translate(4366.6,0)"><use data-c="1D447" xlink:href="#MJX-TEX-I-1D447"></use></g><g data-mml-node="mi" transform="translate(5070.6,0)"><use data-c="1D442" xlink:href="#MJX-TEX-I-1D442"></use></g><g data-mml-node="mi" transform="translate(5833.6,0)"><use data-c="1D440" xlink:href="#MJX-TEX-I-1D440"></use></g><g data-mml-node="mi" transform="translate(6884.6,0)"><use data-c="1D438" xlink:href="#MJX-TEX-I-1D438"></use></g><g data-mml-node="mi" transform="translate(7648.6,0)"><use data-c="1D445" xlink:href="#MJX-TEX-I-1D445"></use></g><g data-mml-node="mi" transform="translate(8407.6,0)"><use data-c="1D446" xlink:href="#MJX-TEX-I-1D446"></use></g><g data-mml-node="mo" transform="translate(9052.6,0)"><use data-c="29" xlink:href="#MJX-TEX-N-29"></use></g></g></g></g><g data-mml-node="mo" transform="translate(25571,0) translate(0 250)"></g></g></g></g></svg><mjx-assistive-mml unselectable="on" display="block"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><mrow data-mjx-texclass="INNER"><mo data-mjx-texclass="OPEN">{</mo><mtable columnalign="left left" columnspacing="1em" rowspacing=".2em"><mtr><mtd><mo stretchy="false">(</mo><mi>C</mi><mi>U</mi><mi>S</mi><mi>T</mi><mi>O</mi><mi>M</mi><mi>E</mi><mi>R</mi><mi>S</mi><mo stretchy="false">)</mo><mo>=</mo><mn>2</mn><mo>∗</mo><mo stretchy="false">(</mo><mn>0.2</mn><mo>+</mo><mo stretchy="false">(</mo><mi>A</mi><mi>D</mi><mi>V</mi><mi>E</mi><mi>R</mi><mi>T</mi><mi>I</mi><mi>S</mi><mi>M</mi><mi>E</mi><mi>N</mi><mi>T</mi><mi>S</mi><mo stretchy="false">)</mo><msup><mo stretchy="false">)</mo><mn>2</mn></msup></mtd></mtr><mtr><mtd><mo stretchy="false">(</mo><mi>A</mi><mi>D</mi><mi>V</mi><mi>E</mi><mi>R</mi><mi>T</mi><mi>I</mi><mi>S</mi><mi>M</mi><mi>E</mi><mi>N</mi><mi>T</mi><mi>S</mi><mo stretchy="false">)</mo><mo>=</mo><mn>45</mn></mtd></mtr><mtr><mtd><mo>?</mo><mo>=</mo><mo stretchy="false">(</mo><mi>C</mi><mi>U</mi><mi>S</mi><mi>T</mi><mi>O</mi><mi>M</mi><mi>E</mi><mi>R</mi><mi>S</mi><mo stretchy="false">)</mo></mtd></mtr></mtable><mo data-mjx-texclass="CLOSE" fence="true" stretchy="true" symmetric="true"></mo></mrow></math></mjx-assistive-mml></mjx-container></span>
+</p>
+<p>Words in the problem text resemble mathematical operations and variables, so the STUDENT can translate the English
+    text into mathematical expressions using pattern matching. The question mark is a special symbol used to denote the
+    unknown value. The variables in the equation are subparts of the problem text.</p>
+<p>When the set of equations is unsolvable, the STUDENT will try to solve it again with several techniques applied. For
+    example, STUDENT may change variable names to be equal if they have some words in common (e.g., “<em>SPEED</em>” and “<em>SPEED OF THE CAR</em>”). Or, the
+                    STUDENT may add new equations from its internal knowledge of the
+                    world.</p>
+<p>The STUDENT program is nearly 60 years old. The field of AI programming has improved since that time. Peter Norvig
+    presented an analysis and elegant implementation of STUDENT written in Common Lisp in functional programming style
+    <span class="citation" data-cites="paip">(Norvig 1991)</span>.</p>
+<h2 id="math-word-problem-solvers" class="subsection">Math word problem solvers</h2>
+<p>We want to continue the literature overview by analyzing math word problem solvers. We want to inherit the researched
+    knowledge of natural language processing and problem representation that is studied in this field of word
+    problem-solving.</p>
+<p>Here is the list and analysis of different problem representations for MWPs structured by Mandal et
+    al.
+    <span class="citation" data-cites="mwp_repr">(Mandal and Naskar 2019)</span>:</p>
+<ul>
+    <li>
+        <p>Equation template representation. An equation template is a predetermined equation that is formed with arithmetic
+            operations and with two types of unknowns (called slots): unknown variables and numbers. Using statistical approaches,
+            the words in the problem are aligned into these unknown slots.</p>
+    </li>
+    <li>
+        <p>Equation tree representation. The whole problem is converted into an equation tree using statistical methods.
+            Usually, recognizers generate several trees, so another approach is applied to choose the best.</p>
+    </li>
+    <li>
+        <p>Entity and state transition-based representation. In this approach, the problem consists of states and state
+            transitions. A state contains all the information of the known objects (their owners, count, and type). State transition
+            would change the count of belonging objects, which can result in an equation.</p>
+    </li>
+    <li>
+        <p>Tag-based representation. In this method, the text is processed in several stages. First, it is tokenized and parsed.
+            Then, the type of problem is recognized. After that, several logic forms representing grammatical relations and
+            quantities are generated. An answer is generated using special techniques.</p>
+    </li>
+</ul>
+<p>The natural language processing of MWPs has many methods, including rule-based techniques and statistical and neural
+    models. Often, solvers parse the English text into dependency trees. Common features extracted from the text are part of
+    speech tag, the lemma of a word, quantities, units of quantities, comparative adverbs, dependencies between verbs and
+    quantities, etc.
+    <span class="citation" data-cites="mwp_nlp">(Zhang et al. 2020)</span>.</p>
+<h2 id="physics-word-problem-solvers" class="subsection">Physics word problem solvers</h2>
+<p>There is not so much research and categorization on PWP solvers. Most programs date back to 1970-1980 and use their
+    own knowledge representation and custom natural language processing methods.</p>
+<p>One of the first programs that could handle PWP is the NEWTON program
+                    by Kleer
+    <span class="citation" data-cites="newton">(Kleer 1977)</span>. It is made to solve mechanical problems. NEWTON would
+        analyze the programs text and convert it to several data structures. The first data structure depicts objects, and the
+        second is a tree-like data structure (called “envisioning tree”) that holds all possible states of the objects. The
+        trees root is the starting position, and the next children are the next events. When the tree divides, it means that
+        there are several possibilities where an object could move. Quantitative knowledge is presented in a data structure
+        called FRAME. It stores all the known parameters of the object and the equations that connect those parameters.</p>
+<p>Gordon S. Novak Jr. has studied the topic of physics problems very thoroughly. One of the programs he developed is
+    ISAAC
+    <span class="citation" data-cites="isaac">(Novak 1976)</span>. This problem understands and solves physics problems that
+        involve rigid bodies in static equilibrium. The program can also draw a diagram of the problem.</p>
+<p>ISAAC problem analysis consists of lots of stages, and they have several branches. Firstly, an augmented transition
+    network transforms the English text into structured parsed sentences. Then, the semantic analysis is performed. It is
+    used to determine the meaning of verbs and prepositions. After several stages, a canonical object model is formed. In
+    this data structure, objects in the problem are represented as physics objects (point, pivot, lever, etc.). The
+    canonical object model is then passed to the EUCLID program, which analyzes the orientation of objects and assigns
+    coordinates to them. After that, the geometric model is formed. Problem-solving involves creating a set of equations
+    that represent physical laws between objects.</p>
+<p>The ISAAC program is big and complex. It is hard to analyze it because of its age and programming style. As the
+    author states, 44 pages of Lisp code is written only for parsing the English text, while problem-solving is one of the
+    simplest parts of the program. We were unable to find the source code of the ISAAC program.</p>
+<p>Bundy et al. created the MECHO program, which addresses mechanical
+                    PWPs and is implemented in Prolog
+    <span class="citation" data-cites="mecho">(Bundy et al. 1979)</span>. The program processes the word problem in several
+        stages. First, it parses the text, extracting information. Then, MECHO derives assertions related to objects, given
+        parameters, and unknown values from the parsed data. These assertions are then transformed into a particular data
+        structure called schema, where inference rules, resembling logical representations of physics laws in Prolog, are
+        applied. MECHO can provide either symbolic or numerical solutions.</p>
+<p>Mukherjee et al. have an extensive overview of rule-based word problem solvers and a dedicated section for PWPs.
+    Other programs for solving PWPs include BEATRIX, ALBERT, and FREEBODY
+    <span class="citation" data-cites="other_pwp">(Mukherjee and Garain 2008)</span>. All those programs address only
+        specific types of physics problems. As the reader may notice, all the names of the programs resemble human names and are
+        written in upper-case. Possibly, this tradition came after the STUDENT program.</p>
+<p>We have found a modern paper on PWP solving. Leszczynski et al. address the problems of a free-falling object under
+    constant acceleration of gravity
+    <span class="citation" data-cites="modern_pwp">(Leszczynski and Moreira 2017)</span>. The problem is analyzed using
+        several recurrent neural networks (RNN), then the dynamical system is formed, and the solution is provided at the end.
+        The first RNN is a word labeler used to extract the given values and the problem question. The second RNN is a
+        classifier that determines the type of question. While this work seems modern and interesting, the accepted problem set
+        is limited and generated artificially using context-free grammar.</p>
+<h2 id="conclusions-of-literature-analysis" class="subsection">Conclusions of literature analysis</h2>
+<p>We have investigated the design of several word problem solvers. Unfortunately, we concluded that a few techniques
+    apply to make a generic PWP solver. Or at least the known methods cannot solve problems from Ukrainian physics
+    textbooks.</p>
+<p>There are some issues in using STUDENT to solve physics problems.
+                    Consider the problem: “<em>If the
+    distance between Dnipro and Kyiv is 477 kilometers and the time the automobile has traveled is 6 hours, then what is the
+    speed of the automobile?</em>”. The STUDENT would generate
+                    this set of equations:</p>
+<p>
+    <span class="math display"><mjx-container class="MathJax" jax="SVG" display="true" style="position: relative;"><svg style="vertical-align: -3.281ex;" xmlns="http://www.w3.org/2000/svg" width="34.691ex" height="7.692ex" role="img" focusable="false" viewBox="0 -1950 15333.6 3400" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true"><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)"><g data-mml-node="math"><g data-mml-node="mrow"><g data-mml-node="mo"><use data-c="23A7" xlink:href="#MJX-TEX-S4-23A7" transform="translate(0,1051)"></use><use data-c="23A9" xlink:href="#MJX-TEX-S4-23A9" transform="translate(0,-551)"></use><use data-c="23A8" xlink:href="#MJX-TEX-S4-23A8" transform="translate(0,0)"></use><svg width="889" height="81" y="1060" x="0" viewBox="0 14.3 889 81"><use data-c="23AA" xlink:href="#MJX-TEX-S4-23AA" transform="scale(1,0.398)"></use></svg><svg width="889" height="81" y="-641" x="0" viewBox="0 14.3 889 81"><use data-c="23AA" xlink:href="#MJX-TEX-S4-23AA" transform="scale(1,0.398)"></use></svg></g><g data-mml-node="mtable" transform="translate(889,0)"><g data-mml-node="mtr" transform="translate(0,1200)"><g data-mml-node="mtd"><g data-mml-node="mo"><use data-c="28" xlink:href="#MJX-TEX-N-28"></use></g><g data-mml-node="mi" transform="translate(389,0)"><use data-c="1D437" xlink:href="#MJX-TEX-I-1D437"></use></g><g data-mml-node="mi" transform="translate(1217,0)"><use data-c="1D43C" xlink:href="#MJX-TEX-I-1D43C"></use></g><g data-mml-node="mi" transform="translate(1721,0)"><use data-c="1D446" xlink:href="#MJX-TEX-I-1D446"></use></g><g data-mml-node="mi" transform="translate(2366,0)"><use data-c="1D447" xlink:href="#MJX-TEX-I-1D447"></use></g><g data-mml-node="mi" transform="translate(3070,0)"><use data-c="1D434" xlink:href="#MJX-TEX-I-1D434"></use></g><g data-mml-node="mi" transform="translate(3820,0)"><use data-c="1D441" xlink:href="#MJX-TEX-I-1D441"></use></g><g data-mml-node="mi" transform="translate(4708,0)"><use data-c="1D436" xlink:href="#MJX-TEX-I-1D436"></use></g><g data-mml-node="mi" transform="translate(5468,0)"><use data-c="1D438" xlink:href="#MJX-TEX-I-1D438"></use></g><g data-mml-node="mo" transform="translate(6232,0)"><use data-c="29" xlink:href="#MJX-TEX-N-29"></use></g><g data-mml-node="mo" transform="translate(6898.8,0)"><use data-c="3D" xlink:href="#MJX-TEX-N-3D"></use></g><g data-mml-node="mn" transform="translate(7954.6,0)"><use data-c="34" xlink:href="#MJX-TEX-N-34"></use><use data-c="37" xlink:href="#MJX-TEX-N-37" transform="translate(500,0)"></use><use data-c="37" xlink:href="#MJX-TEX-N-37" transform="translate(1000,0)"></use></g><g data-mml-node="mtext" transform="translate(9454.6,0)"><use data-c="A0" xlink:href="#MJX-TEX-N-A0"></use></g><g data-mml-node="mi" transform="translate(9704.6,0)"><use data-c="1D458" xlink:href="#MJX-TEX-I-1D458"></use></g><g data-mml-node="mi" transform="translate(10225.6,0)"><use data-c="1D456" xlink:href="#MJX-TEX-I-1D456"></use></g><g data-mml-node="mi" transform="translate(10570.6,0)"><use data-c="1D459" xlink:href="#MJX-TEX-I-1D459"></use></g><g data-mml-node="mi" transform="translate(10868.6,0)"><use data-c="1D45C" xlink:href="#MJX-TEX-I-1D45C"></use></g><g data-mml-node="mi" transform="translate(11353.6,0)"><use data-c="1D45A" xlink:href="#MJX-TEX-I-1D45A"></use></g><g data-mml-node="mi" transform="translate(12231.6,0)"><use data-c="1D452" xlink:href="#MJX-TEX-I-1D452"></use></g><g data-mml-node="mi" transform="translate(12697.6,0)"><use data-c="1D461" xlink:href="#MJX-TEX-I-1D461"></use></g><g data-mml-node="mi" transform="translate(13058.6,0)"><use data-c="1D452" xlink:href="#MJX-TEX-I-1D452"></use></g><g data-mml-node="mi" transform="translate(13524.6,0)"><use data-c="1D45F" xlink:href="#MJX-TEX-I-1D45F"></use></g><g data-mml-node="mi" transform="translate(13975.6,0)"><use data-c="1D460" xlink:href="#MJX-TEX-I-1D460"></use></g></g></g><g data-mml-node="mtr" transform="translate(0,0)"><g data-mml-node="mtd"><g data-mml-node="mo"><use data-c="28" xlink:href="#MJX-TEX-N-28"></use></g><g data-mml-node="mi" transform="translate(389,0)"><use data-c="1D447" xlink:href="#MJX-TEX-I-1D447"></use></g><g data-mml-node="mi" transform="translate(1093,0)"><use data-c="1D43C" xlink:href="#MJX-TEX-I-1D43C"></use></g><g data-mml-node="mi" transform="translate(1597,0)"><use data-c="1D440" xlink:href="#MJX-TEX-I-1D440"></use></g><g data-mml-node="mi" transform="translate(2648,0)"><use data-c="1D438" xlink:href="#MJX-TEX-I-1D438"></use></g><g data-mml-node="mo" transform="translate(3412,0)"><use data-c="29" xlink:href="#MJX-TEX-N-29"></use></g><g data-mml-node="mo" transform="translate(4078.8,0)"><use data-c="3D" xlink:href="#MJX-TEX-N-3D"></use></g><g data-mml-node="mn" transform="translate(5134.6,0)"><use data-c="36" xlink:href="#MJX-TEX-N-36"></use></g><g data-mml-node="mtext" transform="translate(5634.6,0)"><use data-c="A0" xlink:href="#MJX-TEX-N-A0"></use></g><g data-mml-node="mi" transform="translate(5884.6,0)"><use data-c="210E" xlink:href="#MJX-TEX-I-210E"></use></g><g data-mml-node="mi" transform="translate(6460.6,0)"><use data-c="1D45C" xlink:href="#MJX-TEX-I-1D45C"></use></g><g data-mml-node="mi" transform="translate(6945.6,0)"><use data-c="1D462" xlink:href="#MJX-TEX-I-1D462"></use></g><g data-mml-node="mi" transform="translate(7517.6,0)"><use data-c="1D45F" xlink:href="#MJX-TEX-I-1D45F"></use></g><g data-mml-node="mi" transform="translate(7968.6,0)"><use data-c="1D460" xlink:href="#MJX-TEX-I-1D460"></use></g></g></g><g data-mml-node="mtr" transform="translate(0,-1200)"><g data-mml-node="mtd"><g data-mml-node="mo"><use data-c="3F" xlink:href="#MJX-TEX-N-3F"></use></g><g data-mml-node="mo" transform="translate(749.8,0)"><use data-c="3D" xlink:href="#MJX-TEX-N-3D"></use></g><g data-mml-node="mo" transform="translate(1805.6,0)"><use data-c="28" xlink:href="#MJX-TEX-N-28"></use></g><g data-mml-node="mi" transform="translate(2194.6,0)"><use data-c="1D446" xlink:href="#MJX-TEX-I-1D446"></use></g><g data-mml-node="mi" transform="translate(2839.6,0)"><use data-c="1D443" xlink:href="#MJX-TEX-I-1D443"></use></g><g data-mml-node="mi" transform="translate(3590.6,0)"><use data-c="1D438" xlink:href="#MJX-TEX-I-1D438"></use></g><g data-mml-node="mi" transform="translate(4354.6,0)"><use data-c="1D438" xlink:href="#MJX-TEX-I-1D438"></use></g><g data-mml-node="mi" transform="translate(5118.6,0)"><use data-c="1D437" xlink:href="#MJX-TEX-I-1D437"></use></g><g data-mml-node="mo" transform="translate(5946.6,0)"><use data-c="29" xlink:href="#MJX-TEX-N-29"></use></g></g></g></g><g data-mml-node="mo" transform="translate(15333.6,0) translate(0 250)"></g></g></g></g></svg><mjx-assistive-mml unselectable="on" display="block"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><mrow data-mjx-texclass="INNER"><mo data-mjx-texclass="OPEN">{</mo><mtable columnalign="left left" columnspacing="1em" rowspacing=".2em"><mtr><mtd><mo stretchy="false">(</mo><mi>D</mi><mi>I</mi><mi>S</mi><mi>T</mi><mi>A</mi><mi>N</mi><mi>C</mi><mi>E</mi><mo stretchy="false">)</mo><mo>=</mo><mn>477</mn><mtext> </mtext><mi>k</mi><mi>i</mi><mi>l</mi><mi>o</mi><mi>m</mi><mi>e</mi><mi>t</mi><mi>e</mi><mi>r</mi><mi>s</mi></mtd></mtr><mtr><mtd><mo stretchy="false">(</mo><mi>T</mi><mi>I</mi><mi>M</mi><mi>E</mi><mo stretchy="false">)</mo><mo>=</mo><mn>6</mn><mtext> </mtext><mi>h</mi><mi>o</mi><mi>u</mi><mi>r</mi><mi>s</mi></mtd></mtr><mtr><mtd><mo>?</mo><mo>=</mo><mo stretchy="false">(</mo><mi>S</mi><mi>P</mi><mi>E</mi><mi>E</mi><mi>D</mi><mo stretchy="false">)</mo></mtd></mtr></mtable><mo data-mjx-texclass="CLOSE" fence="true" stretchy="true" symmetric="true"></mo></mrow></math></mjx-assistive-mml></mjx-container></span>
+</p>
+<p>As the reader may notice, the STUDENT has generated a system consisting of given values and unknowns. This set would
+    resemble the column “Given”, which is usually written by students. But the physics problem cannot be represented like
+    this set of equations for two reasons:</p>
+<ol>
+    <li>
+        <p>This set is unsolvable. A set of equations requires that all the information needed to find the unknowns is present
+            in the set. But our example has no connection between speed, time, and distance.</p>
+    </li>
+    <li>
+        <p>There is a theoretical issue. In math, variables represent unknown values and act like bound variables in lambda
+            calculus: their names can be changed freely unless they interfere with another name. But in the physics field, the name
+            of variables has a special meaning. It is a given value that marks some parameter of an object.</p>
+    </li>
+</ol>
+<p>In this example, STUDENT would add needed equations from its internal knowledge using the search on the first word of
+    a variable (it may find the relation “<em>the distance is equal to time multiplied by
+                    speed</em>
+    ”). While this approach may work for simple problems like the one above, it is not the best solution because it is too
+    chaotic and brute-force-like.</p>
+<p>The approaches presented in subsection 2.2 are not sufficient to represent physics problems. They are constructed
+    around math expressions, though in PWP, usually there are no explicitly stated expressions (only given values are
+    specified).</p>
+<p>Most papers for word problem-solving are outdated. They use unstandardized programming languages with undefined
+    styles of programming. The analysis of the capabilities and limitations of previous works is not enough.</p>
+<h1 id="object-subject-and-methods-of-research" class="section">OBJECT, SUBJECT, AND METHODS OF RESEARCH</h1>
+<h2 id="object-and-subject" class="subsection">Object and subject</h2>
+<p>The object of our research is automatic word problem-solving. The subject of our research is the automatic solving of
+    physics word problems.</p>
+<h2 id="method-of-the-research" class="subsection">Method of the research</h2>
+<p>To study the subject, we developed a program that can solve basic PWPs stated in the English language, which do not
+    involve any dynamic change or complex representation. Also, we do not support solving problems where a graphical model
+    is needed (forces, impulses, energy, etc.).</p>
+<p>The whole program was written in Python language. We have separated our program into two projects: one is a user
+    interface, and the other is the core library. The technology stack of the user interface consists of Django (web
+    framework), MathJax (LATEX output), and Bootstrap (graphical design). The library uses spaCy (natural language
+    processing) and SymPy (symbolic math) libraries. We used PythonAnywhere to host our program (<a href="https://inanyan.pythonanywhere.com/" class="uri">
+        https://inanyan.pythonanywhere.com/</a>).</p>
+<p>By definitions provided in AI:MA
+    <span class="citation" data-cites="aima">(Russell and Norvig 2009)</span>, we consider our program to be inside the
+        “Thinking Rationally” field because we are trying to find the computational model behind PWP solving and provide the
+        user with a correct problem solution.</p>
+<p>The whole NLP pipeline, algorithms, and data structures that are used by our program can be depicted through this
+    diagram:</p>
+<figure>
+    <img src="/media/image2.png" style="width:75.0%">
+    <figcaption>Algorithms and data structures of our program.</figcaption>
+</figure>
+<p>In fig. 1 nodes represent algorithms, right after the node comes a brief comment on the chosen approach, and the
+    labels of the arrows are data structures. In section IV of the paper, we will describe all the steps of the program, but
+    before that, we will discuss the found types of physics problems to understand what features we need to extract from
+    English text.</p>
+<h2 id="testing-data" class="subsection">Testing data</h2>
+<p>To test our program, we created a small dataset with physics problems collected from various sources such
+        as
+    <span class="citation" data-cites="ukr_ph_1">(Гельфгат 2009)</span>,
+    <span class="citation" data-cites="ukr_ph_2">(Ненашев 2011)</span>, and the Internet. We
+                                        translated the Ukrainian variants to English.</p>
+<h1 id="description-of-the-program" class="section">DESCRIPTION OF THE PROGRAM</h1>
+<h2 id="problem-types" class="subsection">Problem types</h2>
+<p>The first thing we did before starting to make this program was to study available PWP. We noticed that PWPs fall
+    into five categories:</p>
+<ul>
+    <li>
+        <p>Theoretical problem: “<em>Why do we not observe the daily rotation of the earth in everyday
+            life?</em>”.</p>
+    </li>
+    <li>
+        <p>Value conversion problem: “<em>The car is traveling at a speed of 108 kilometers per hour. Represent this speed in
+                        meters per second</em>”.</p>
+    </li>
+    <li>
+        <p>Value comparison problem: “<em>Which speed is bigger: 10 meters
+                                                            per second or 10 kilometers per hour?</em>”.</p>
+    </li>
+    <li>
+        <p>Unknowns finding problem: “<em>The car drove for 40 minutes at a speed of 144 kilometers per hour. How far did the
+                        car travel?</em>”.</p>
+    </li>
+    <li>
+        <p>Calculation of the change of a value depending on other value changes:
+            “<em>How many times will the speed of wave
+            propagation increase if the wavelength increases by three times and the period of oscillation remains unchanged?</em>”.</p>
+    </li>
+</ul>
+<p>We decided not to solve the theoretical problems because they require an extensive ontology of physics definitions
+    and laws, while we were more focused on computational problems.</p>
+<h2 id="named-entity-recognition" class="subsection">Named Entity Recognition</h2>
+<p>We chose the named entity recognition (NER) method for the feature extraction task. In this method, subparts of text,
+    called entities, are marked with a particular string that represents the type of an entity.</p>
+<p>We have collected the information about which entities our program
+                    should recognize:</p>
+<ul>
+    <li>
+        <p>Given values: “<em>the distance is 10 kilometers</em>”, “<em>the
+                                                            mass is 50 grams</em>”, etc.</p>
+    </li>
+    <li>
+        <p>Unknown values: “<em>What is the speed…</em>”, “<em>Determine the
+                                                            density of…</em>”, etc.</p>
+    </li>
+    <li>
+        <p>Units: “<em>meters per second</em>”, “<em>kilogram</em>”,
+                                                            “<em>Newton</em>”, etc.</p>
+    </li>
+    <li>
+        <p>Value changes: “<em>time is increased by a factor of 2</em>”,
+                                                            etc.</p>
+    </li>
+</ul>
+<p>For NER, we chose a rule-based method – pattern matching. We will present the patterns we used for NER with our
+    modified BNF notation because there is no standardized way to do this. In this notation, no recursion is allowed.
+    Terminals are written as is and may resemble either the lowercase form of a token or its lemma. Non-terminals are
+    written inside ‘&lt;’ and ‘&gt;’. Entities are written as non-terminals whose names are written in uppercase form; the
+    other non-terminals are fragments used only for easier construction of the grammar. The special rule &lt;like_num&gt;
+    denotes one token resembling a number. An ellipsis indicates a part of the rule that was shortened in the paper.</p>
+<p>Here is the list of all the rules:</p>
+<div class="grammar">
+    <p>&lt;unit_name&gt; ::= meter | hour | kilogram | candela | lux |
+                                        ...</p>
+    <p>&lt;modifier&gt; ::= cubic | square</p>
+    <p>&lt;single_unit&gt; ::= [&lt;modifier&gt;] &lt;unit_name&gt;</p>
+    <p>&lt;compound_unit&gt; ::= &lt;single_unit&gt; per
+                                        &lt;single_unit&gt;</p>
+    <p>&lt;UNIT&gt; ::= &lt;single_unit&gt; | &lt;compound_unit&gt;</p>
+    <p>&lt;QUANTITY&gt; ::= &lt;like_num&gt; &lt;UNIT&gt;</p>
+    <p>&lt;COMPARISON_WORD&gt; ::= greater | faster | bigger | larger |
+                                        slower | less | ...</p>
+    <p>&lt;single_term&gt; ::= density | volume | speed | length | moment |
+                                        force | ...</p>
+    <p>&lt;compound_term&gt; ::= ampere force | wave propagation | ...</p>
+    <p>&lt;simple_term&gt; ::= &lt;single_term&gt; |
+                                        &lt;compound_term&gt;</p>
+    <p>&lt;of_term&gt; ::= &lt;simple_term&gt; of [&lt;determiner&gt;]
+                                        &lt;simple_term&gt;</p>
+    <p>&lt;TERM&gt; ::= &lt;simple_term&gt; | &lt;of_term&gt;</p>
+    <p>&lt;UNKNOWN_QUESTION&gt; ::= what | determine | calculate</p>
+    <p>&lt;special_unknown_word&gt; ::= far | fast | often</p>
+    <p>&lt;UNKNOWN_HOW_QUESTION&gt; ::= how &lt;special_unknown_word&gt;</p>
+    <p>&lt;neg_change_word&gt; ::= decrease | reduce</p>
+    <p>&lt;pos_change_word&gt; ::= increase</p>
+    <p>&lt;determiner&gt; ::= a | an | the</p>
+    <p>&lt;change_pattern&gt; ::= by [&lt;determiner&gt; factor of]
+                                        &lt;like_num&gt;</p>
+    <p>&lt;NEG_CHANGE&gt; ::= &lt;neg_change_word&gt;
+                                        &lt;change_pattern&gt;</p>
+    <p>&lt;POS_CHANGE&gt; ::= &lt;pos_change_word&gt;
+                                        &lt;change_pattern&gt;</p>
+    <p>&lt;CHANGE_VERB&gt; ::= &lt;pos_change_word&gt; |
+                                        &lt;neg_change_word&gt; | change</p>
+</div>
+<p>We provide here an example of NER to understand this process
+                    better:</p>
+<figure>
+    <img src="/media/image3.png">
+    <figcaption>Example of named entity recognition for an unknown finding
+                                        problem.</figcaption>
+</figure>
+<figure>
+    <img src="/media/image4.png">
+    <figcaption>Example of named entity recognition for a value change
+                                        problem.</figcaption>
+</figure>
+<h2 id="problem-type-recognition" class="subsection">Problem type recognition</h2>
+<p>The program determines the type of problem by looking at the presence of entities. The algorithm can be described in
+    English like this:</p>
+<ol>
+    <li>
+        <p>If there is a CHANGE_VERB entity, then it is a value change
+                                                            problem.</p>
+    </li>
+    <li>
+        <p>If there is a UNIT entity, then it is a conversion
+                                                            problem.</p>
+    </li>
+    <li>
+        <p>If there is a COMPARSON_WORD entity, then it is a comparison
+                                                            problem.</p>
+    </li>
+    <li>
+        <p>If there is an UNKNOWN_QUESTION or UNKNOWN_HOW_QUESTION entity, then it is an unknown finding
+            problem.</p>
+    </li>
+    <li>
+        <p>Otherwise, the program cannot recognize the type of
+                                                            problem.</p>
+    </li>
+</ol>
+<h2 id="entities-to-problem-representation-conversion" class="subsection">Entities to problem representation conversion</h2>
+<p>The algorithm for converting a list of entities to problem representation according to the recognized problem type
+    can be described like this:</p>
+<ol>
+    <li>
+        <p>For value conversion problem, extract a quantity and a
+                                                            unit.</p>
+    </li>
+    <li>
+        <p>For value comparison problems, extract two quantities.</p>
+    </li>
+    <li>
+        <p>For unknowns finding problem, extract given and unknown
+                                                            values.</p>
+    </li>
+    <li>
+        <p>For value change problems, extract the value changes and the value in
+            question.</p>
+    </li>
+</ol>
+<p>To convert a quantity into the internal math representation, the program converts the number (the first token) and
+    the unit (the rest).</p>
+<p>We have found that units in SymPy are written as regular English words, allowing us to use Python’s insecure “eval”
+    function. The program will convert the unit entity into a valid Python expression and call the “eval” function. We
+    replace the word “<em>per</em>” with the division
+                    symbol. To parse the modifiers “<em>square</em>” and “<em>cube</em>”, we
+                    replace those words with “**2” and “**3”, respectively, after the single
+                    unit.</p>
+<p>We have found two ways in which given values are encoded in the list of entities. It is either a pair of TERM and
+    QUANTITY or a single QUANTITY.</p>
+<p>To convert the pair of TERM and QUANTITY into a given value, the program needs to convert the term into a symbol (the
+    QUANTITY will be the value of a given variable). The program uses a hard-coded map data structure, the key to which is a
+    string, and the value is a symbol (e.g., “<em>force</em>” is
+    <span class="math inline">
+        <em>F</em>
+    </span>,
+                    “<em>mass</em>” is
+    <span class="math inline">
+        <em>m</em>
+    </span>,
+                    etc.).</p>
+<p>A special technique for determining the symbol should be applied to convert a single QUANTITY into a given value. We
+    have found that looking at the unit of a quantity can infer the variable. If the unit is one English word, the program
+    uses a hard-coded map data structure (e.g., “<em>meters</em>” is
+    <span class="math inline">
+        <em>S</em>
+    </span>,
+                    “<em>seconds</em>” is
+    <span class="math inline">
+        <em>t</em>
+    </span>,
+                    etc.).</p>
+<p>The conversion of compound units and units with modifiers is tricky. However, we noticed that compound units resemble
+    a physical formula (e.g., “<em>meters per second</em>” corresponds to
+    <span class="math inline"><mjx-container class="MathJax" jax="SVG" style="position: relative;"><svg style="vertical-align: -0.798ex;" xmlns="http://www.w3.org/2000/svg" width="6.142ex" height="2.817ex" role="img" focusable="false" viewBox="0 -892.5 2714.6 1245.3" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true"><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)"><g data-mml-node="math"><g data-mml-node="mi"><use data-c="1D463" xlink:href="#MJX-TEX-I-1D463"></use></g><g data-mml-node="mo" transform="translate(762.8,0)"><use data-c="3D" xlink:href="#MJX-TEX-N-3D"></use></g><g data-mml-node="mfrac" transform="translate(1818.6,0)"><g data-mml-node="mi" transform="translate(220,394) scale(0.707)"><use data-c="1D446" xlink:href="#MJX-TEX-I-1D446"></use></g><g data-mml-node="mi" transform="translate(320.4,-345) scale(0.707)"><use data-c="1D461" xlink:href="#MJX-TEX-I-1D461"></use></g><rect width="656.1" height="60" x="120" y="220"></rect></g></g></g></svg><mjx-assistive-mml unselectable="on" display="inline"><math xmlns="http://www.w3.org/1998/Math/MathML"><mi>v</mi><mo>=</mo><mfrac><mi>S</mi><mi>t</mi></mfrac></math></mjx-assistive-mml></mjx-container></span>, etc.). So, the program will first convert all one-word units in the
+        compound unit to the symbols. Then, if the expression is not a single unit, the program will search the list of formulas
+        for a formula, the right-hand side of which is identical to the result expression.</p>
+<p>The whole process described above ended up being so powerful that the program will use it while presenting the output
+    of value comparison and conversion problems.</p>
+<p>Unknown values are encoded either as a pair of UNKNOWN_QUESTION and TERM or as a single UNKNOWN_HOW_QUESTION. For the
+    first variant, it is sufficient to convert the TERM into a variable, and for the second variant, we use a hard-coded map
+    data structure (e.g., “<em>how
+                    far</em>” is
+    <span class="math inline">
+        <em>S</em>
+    </span>, “<em>how
+                                        fast</em>” is
+    <span class="math inline">
+        <em>υ</em>
+    </span>, etc.).</p>
+<p>Value changes are encoded as a pair of TERM and POS_CHANGE or TERM and NEG_CHANGE. To convert these pairs into a
+    variable change, the program should infer the variable by the TERM entity and determine the factor of the variable
+    change. According to our NER rules, the factor number comes at the end of the POS_CHANGE and NEG_CHANGE. So, it is
+    enough to parse the last token in the span. If the entity is NEG_CHANGE, the parser should also take the numbers
+    reciprocal.</p>
+<p>The value under change is encoded as a pair of TERM and CHANGE_WORD. It is enough to infer the variable from the TERM
+    entity.</p>
+<h2 id="problem-solving" class="subsection">Problem-solving</h2>
+<p>Solving value conversion and comparison problems is trivial, and it is a primitive operation in the SymPy library, so
+    we will not describe these processes. However, we note that for value comparison problems, the program will convert the
+    second value to the unit of the first value.</p>
+<p>We define the solution to unknowns finding problems as a list of formulas. This list resembles a plan of actions that
+    the computer should perform. The calculation of the final answer is delegated to the output part of our program.</p>
+<p>The first attempt to solve an unknown finding problem would be to use a search algorithm for each unknown variable to
+    find a formula left-hand side of which is equal to the unknown. But this approach is wrong for several reasons:</p>
+<ul>
+    <li>
+        <p>The program could find several applicable formulas for one
+                                                            unknown.</p>
+    </li>
+    <li>
+        <p>The formula may contain an unknown variable (a variable that is not given). However, it is possible to find another
+            formula that could be used to find those variables.</p>
+    </li>
+    <li>
+        <p>One physical formula can be used to find several variables. Consider the second Newton’s
+                        law:
+            <span class="math inline">
+                <em>F</em>
+                =
+                <em>m</em>
+                <em>a</em>
+            </span>. This formula can be used not only to find a force but also a mass (if the force and the acceleration are known)
+            or an acceleration (if the force and the mass are known).</p>
+    </li>
+</ul>
+<p>These discussions guided us to make this recursive algorithm:</p>
+<ol>
+    <li>
+        <p>Find an applicable formula for the unknown variable.</p>
+    </li>
+    <li>
+        <p>Create a set difference of given variables and the free symbols in the found formula. This set will resemble the set
+            of unknowns of a formula.</p>
+    </li>
+    <li>
+        <p>If the set is empty, return a list of one element containing the found formula (base
+                        case).</p>
+    </li>
+    <li>
+        <p>Otherwise, perform these steps:</p>
+        <ol>
+            <li>
+                <p>For each element in the set, apply this algorithm (recursive
+                                        step).</p>
+            </li>
+            <li>
+                <p>Combine all the results. The final result is a list.</p>
+            </li>
+            <li>
+                <p>Append the found formula to the list.</p>
+            </li>
+            <li>
+                <p>Return the list.</p>
+            </li>
+        </ol>
+    </li>
+</ol>
+<p>We described this algorithm informally because the algorithm can fail in several steps. If the algorithm fails on
+    step 1 or step 4.1, this may mean two things: the program cannot find the solution for the unknown variable in the
+    problem representation, or the program should find another formula to apply.</p>
+<p>Also, we used the term “applicable formula”. This means the formula belongs to the internal list of formulas or is
+    derived.</p>
+<p>We have quickly noticed that this algorithm is a simplified version of the Stanford Research Institute Problem Solver
+    algorithm
+    <span class="citation" data-cites="strips">(Fikes and Nilsson 1971)</span>. So, we modified it to the physical field.
+        The goals are represented as math symbols. The operators are the applicable formulas. The preconditions of an operator
+        (or a formula) are the free symbols of the formula. The initial step is represented as a set of given.</p>
+<p>We define the solution to a value change problem as an ordered pair of a floating-point number and a formula. The
+    number is the result of dividing the value of a changed value and the original value, and the formula is used to present
+    the output for the user.</p>
+<p>We invented this problem-solving algorithm for this problem type:</p>
+<ol>
+    <li>
+        <p>Find a formula for which the given variables are a subset of the formula’s
+                        variables.</p>
+    </li>
+    <li>
+        <p>Substitute each formula variable with the given variables as a “factor *
+                        variable”.</p>
+    </li>
+    <li>
+        <p>Divide the derived formula with the original formula.</p>
+    </li>
+    <li>
+        <p>If the result is a number, then it is the answer to the
+                                                            problem.</p>
+    </li>
+    <li>
+        <p>Otherwise, repeat from step #1 and find another formula.</p>
+    </li>
+</ol>
+<p>The algorithm may fail at step 1 or 5, meaning the program could not find the formula to calculate the change. The
+    algorithm is simple, and it resembles human thinking.</p>
+<h2 id="context" class="subsection">Context</h2>
+<p>The first time we made a prototype of the program, we noticed it was
+                    limited. Consider a problem: “<em>What is the optical power of a
+                    converging lens with a focal length of 40 centimeters?</em>”. A special
+                    formula solves this problem (<span class="math inline"><mjx-container class="MathJax" jax="SVG" style="position: relative;"><svg style="vertical-align: -0.781ex;" xmlns="http://www.w3.org/2000/svg" width="8.844ex" height="2.737ex" role="img" focusable="false" viewBox="0 -864.9 3909.2 1209.9" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true"><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)"><g data-mml-node="math"><g data-mml-node="mi"><use data-c="1D437" xlink:href="#MJX-TEX-I-1D437"></use></g><g data-mml-node="mo" transform="translate(1105.8,0)"><use data-c="3D" xlink:href="#MJX-TEX-N-3D"></use></g><g data-mml-node="mo" transform="translate(2161.6,0)"><use data-c="B1" xlink:href="#MJX-TEX-N-B1"></use></g><g data-mml-node="mfrac" transform="translate(2939.6,0)"><g data-mml-node="mn" transform="translate(308,394) scale(0.707)"><use data-c="31" xlink:href="#MJX-TEX-N-31"></use></g><g data-mml-node="mi" transform="translate(220,-345) scale(0.707)"><use data-c="1D439" xlink:href="#MJX-TEX-I-1D439"></use></g><rect width="729.6" height="60" x="120" y="220"></rect></g></g></g></svg><mjx-assistive-mml unselectable="on" display="inline"><math xmlns="http://www.w3.org/1998/Math/MathML"><mi>D</mi><mo>=</mo><mo>±</mo><mfrac><mn>1</mn><mi>F</mi></mfrac></math></mjx-assistive-mml></mjx-container></span>
+    ). However, the formula varies whether the lens is a converging lens or a diverging lens. Another situation when we find
+    this peculiarity is when we need to calculate the surface of an object (squares, rectangles, triangles, etc.).</p>
+<p>We introduce the term context to encode the information about a physical object. Context is a set of strings that
+    encode objects and their qualities. Examples of context words: “<em>lens</em>”,
+                    “<em>converging</em>”, “<em>diverging</em>”, “<em>square</em>”,
+                    “<em>cube</em>”, “<em>rectangle</em>”, etc. In each physics problem,
+                    there is an associated context.</p>
+<h1 id="results" class="section">RESULTS</h1>
+<h2 id="examples-of-program-usage" class="subsection">Examples of program usage</h2>
+<p>We will present the solution of 4 problems with different types and comment on how the program solved
+        them.</p>
+<p>Problem #1: “<em>The car is traveling at a speed of 108 kilometers
+                    per hour. Represent this speed in meters per second</em>”.</p>
+<figure>
+    <img src="/media/image5.png">
+    <figcaption>The program results for problem #1.</figcaption>
+</figure>
+<p>Problem #1 is a conversion problem. We haven’t found many problems of this type. The program correctly recognized the
+    given quantity and target unit. There is no detailed explanation of the solution because conversion is a primitive
+    operation in SymPy.</p>
+<p>Problem #2: “<em>Which speed is slower: 72 kilometers per hour or 24
+                    meters per second?</em>”.</p>
+<figure>
+    <img src="/media/image6.png">
+    <figcaption>The program results for problem #2.</figcaption>
+</figure>
+<p>Problem #2 is a comparison problem. It is not trivial to compare
+    <span class="math inline"><mjx-container class="MathJax" jax="SVG" style="position: relative;"><svg style="vertical-align: -0.798ex;" xmlns="http://www.w3.org/2000/svg" width="5.496ex" height="2.8ex" role="img" focusable="false" viewBox="0 -884.7 2429.2 1237.5" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true"><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)"><g data-mml-node="math"><g data-mml-node="mn"><use data-c="37" xlink:href="#MJX-TEX-N-37"></use><use data-c="32" xlink:href="#MJX-TEX-N-32" transform="translate(500,0)"></use></g><g data-mml-node="mfrac" transform="translate(1000,0)"><g data-mml-node="mrow" transform="translate(220,394) scale(0.707)"><g data-mml-node="mi"><use data-c="1D458" xlink:href="#MJX-TEX-I-1D458"></use></g><g data-mml-node="mi" transform="translate(521,0)"><use data-c="1D45A" xlink:href="#MJX-TEX-I-1D45A"></use></g></g><g data-mml-node="mi" transform="translate(511,-345) scale(0.707)"><use data-c="210E" xlink:href="#MJX-TEX-I-210E"></use></g><rect width="1189.2" height="60" x="120" y="220"></rect></g></g></g></svg><mjx-assistive-mml unselectable="on" display="inline"><math xmlns="http://www.w3.org/1998/Math/MathML"><mn>72</mn><mfrac><mrow><mi>k</mi><mi>m</mi></mrow><mi>h</mi></mfrac></math></mjx-assistive-mml></mjx-container></span>
+    and
+    <span class="math inline"><mjx-container class="MathJax" jax="SVG" style="position: relative;"><svg style="vertical-align: -0.797ex;" xmlns="http://www.w3.org/2000/svg" width="4.663ex" height="2.395ex" role="img" focusable="false" viewBox="0 -706.5 2060.8 1058.6" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true"><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)"><g data-mml-node="math"><g data-mml-node="mn"><use data-c="32" xlink:href="#MJX-TEX-N-32"></use><use data-c="34" xlink:href="#MJX-TEX-N-34" transform="translate(500,0)"></use></g><g data-mml-node="mfrac" transform="translate(1000,0)"><g data-mml-node="mi" transform="translate(220,394) scale(0.707)"><use data-c="1D45A" xlink:href="#MJX-TEX-I-1D45A"></use></g><g data-mml-node="mi" transform="translate(364.6,-345) scale(0.707)"><use data-c="1D460" xlink:href="#MJX-TEX-I-1D460"></use></g><rect width="820.8" height="60" x="120" y="220"></rect></g></g></g></svg><mjx-assistive-mml unselectable="on" display="inline"><math xmlns="http://www.w3.org/1998/Math/MathML"><mn>24</mn><mfrac><mi>m</mi><mi>s</mi></mfrac></math></mjx-assistive-mml></mjx-container></span>. The program correctly recognized two quantities and the type of the
+        problem. According to our problem-solving strategy, the program converted the second value to the unit of the first
+        value. Also, our program generates answers based on the word that was asked. For example, if the question asks for
+        greater value, the answer will show greater value, and in this example, the program tells us about slower value.</p>
+<p>Problem #3: “<em>To raise a marble column weighing 3.78 tons from the bottom of a lake, 95200 joules of work was
+    done. Determine the depth of the lake</em>”.</p>
+<figure>
+    <img src="/media/image7.png">
+    <figcaption>The program result for problem #3.</figcaption>
+</figure>
+<p>Problem #3 is an unknown finding problem. We chose this problem because it is not so trivial to solve; it includes
+    several formulas for the solution. Unfortunately, this example shows some peculiarities of SymPy and our implementation,
+    which we will discuss in the following subsection.</p>
+<p>The program correctly recognized the given variables and the unknown variable. The program correctly found the
+    solution, including the gravitational force and work formulas. Additionally, the program derived the height from the
+    work formula.</p>
+<p>Problem #4: “<em>How many times will the moment of a force change if the force is increased by a factor of 8 and the
+    arm of the force is decreased by a factor of 4?</em>”.</p>
+<figure>
+    <img src="/media/image8.png">
+    <figcaption>The program results for problem #4.</figcaption>
+</figure>
+<p>Problem #4 is a value change problem. A parser is needed to convert the list of entities to the problem
+    representation fully. The program correctly recognized the given changes and the value under question. The program found
+    the required formula and performed a substitution, which resulted in a number.</p>
+<p>Special attention is required to the term entities. We included the
+                    preposition “<em>of</em>” in the
+    term. Usually, while recognizing noun phrases (NP), different NPs stay away, but we combined them and determined the
+    variable based on the first words. If we did not make this decision, an ambiguity would arise: do we need to find the
+    change of the moment or the force?</p>
+<h2 id="analysis-of-limitations-of-the-program" class="subsection">Analysis of limitations of the program</h2>
+<p>We performed a thorough analysis of issues that our program has. We grouped the issues into several
+    categories:</p>
+<ol>
+    <li>
+        <p>Complex problem types.</p>
+    </li>
+    <li>
+        <p>Imperfect natural language processing.</p>
+    </li>
+    <li>
+        <p>Inaccurate problem type recognition.</p>
+    </li>
+    <li>
+        <p>Incomplete problem representation.</p>
+    </li>
+    <li>
+        <p>Imperfect problem-solving techniques.</p>
+    </li>
+    <li>
+        <p>Symbol is semantically equal to terms and objects.</p>
+    </li>
+    <li>
+        <p>Issues with libraries that we use.</p>
+    </li>
+</ol>
+<p>We want to begin the analysis of the limitations of our program by analyzing our problem-type classification. We have
+    found that our types can have new subtypes. Consider the problem: “<em>Can
+        a wedding ring with a volume of 0.5 cubic centimeters and a mass of 8 grams really be gold?</em>
+    ”. It is a new question type for which the answer is a Boolean value. But it is easy to notice that this is a subtype of
+    unknown finding problem. The program must compare the object’s density to the actual gold density.</p>
+<p>There are lots of issues with natural language processing. We have found that the solution to the problem depends
+    highly on the problem formulation. A possible reason is that we used a rule-based approach for NER. Rule-based
+    techniques are usually used on the first iteration of NLP program development, and then they are replaced by more
+    powerful statistical or neural models
+    <span class="citation" data-cites="nlp">(B. et al. 2020)</span>.</p>
+<p>Pattern matching, used for NER, restricts the input text to a specific syntax. For example, we require that the units
+    are written as proper English words instead of their abbreviations. The program cannot recognize numbers that are not
+    written with decimal notation (e.g., “<em>one second</em>”). The patterns require that every quantity has a
+                    corresponding unit (the program cannot parse “<em>1 and 4
+                    kilograms</em>” as two quantities). Change of a value should be written
+                    as “<em>increased by 9</em>” or “<em>reduced by a factor of 2</em>” (but
+                    the program cannot parse “<em>the value is halved</em>” or
+                    “<em>doubled</em>
+    ”). There are many ways to formulate the problem, so there could be lots of patterns in the text that the programmer may
+    miss.</p>
+<p>Another interesting problem that our application has is that it cannot support tasks with named constants. The
+    program cannot infer that the “<em>length of the equator</em>” is about
+    <span class="math inline">4 ⋅ 10<sup>4</sup>
+        <em>k</em>
+        <em>m</em>
+    </span>. Also
+                    consider the problem: “<em>Find the volume of mercury weighing 2
+                                        kilograms</em>
+    ”. The program needs to refer to the table of densities and update the problem representation. Our implementation does
+    not do it.</p>
+<p>The most interesting issue with parsing English text is that it is easy to deceive the program. Consider the problem:
+    “<em>The airplane
+                    flew 1200 kilometers in 2 hours. At what speed did the airplane
+                    fly?</em>”. The program can handle it. But if the user adds this
+                    sentence to the end of the text: “<em>Represent the result in meters per
+                    second</em>
+    ”, then our implementation will think that this problem is a value conversion problem. So, looking at keywords is not
+    the best approach to determine the type of problem.</p>
+<p>Our problem representation is too basic. The physics problem is not a set of given variables and unknowns. An image
+    or a diagram may be included, but the program cannot analyze them. An equation may be offered.</p>
+<p>However, one of the biggest issues with problem representation is that we do not support several objects in the task.
+    The program cannot recognize the two velocities of two bodies or two capacitors capacitance values in an electric chain.
+    The problem lies in the representation of variables; we use only one symbol for them, but an index could also be used in
+    the real world.</p>
+<p>The solution to some problem types may be more complicated than we provide. This can be illustrated by this problem:
+    “<em>
+        The masses of two steel balls are 1 kilogram and 4 kilograms. Which of the balls has the greater volume? By how many
+        times?</em>
+    ”. Again, it is a simple problem for a human to solve, but not the computer. Our program would think this is a
+    comparison problem and happily answer that 4 kilograms is bigger than 1. The program should use a formula for inferring
+    the volume of objects, but our implementation handles only the given quantities.</p>
+<p>Our problem-solving strategy for value change problems is imperfect. We defined that the answer to a value change
+    problem results from division. But we can compare values not only with division but also with subtraction. Also, we
+    implicitly assume that the physical formulas are created with multiplication and division of variables so that the
+    variables will be reduced in the division step. But if the formula is formed with addition, then this strategy will not
+    work.</p>
+<p>Consider the problem: “<em>How would the mass of an iron ball change
+                    if its radius is increased by a factor of two?</em>
+    ”. This problem requires two formulas to find (one for the volume and one that involves the density of iron). It is easy
+    to notice that we can reuse the STRIPS algorithm to find the unknowns of the first formula, but there lies a new degree
+    of complexity.</p>
+<p>We propose a hypothesis that it is impossible to construct an efficient algorithm for solving value change problems.
+    For every unknown variable in the formula, the program should decide whether to leave it as is (hoping it will be
+    reduced in the division) or to find another formula. But that second formula could also have unknown variables.
+    Moreover, it may miss some changes if the program doesn’t use a formula for some unknowns.</p>
+<p>There is a theoretical issue with our program. Our problem-solving algorithm treats physical terms and objects as
+    variables. But, in the real world, variables resemble physical terms. With this issue, an ambiguity arises:
+    <span class="math inline">
+        <em>c</em>
+    </span>
+    may mean either capacitance or speed of light, but the program considers these terms equal because they are written with
+    the same symbol.</p>
+<p>We have used a special technique for treating a QUANTITY entity as a given value if there is no TERM entity. If the
+    program encounters a “<em>2 meters</em>”” entity, it will treat it as
+    <span class="math inline">
+        <em>S</em>
+        = 2
+        <em>m</em>
+    </span>. We have found that this is another ambiguity in our implementation. This entity can be not
+        only
+    <span class="math inline">
+        <em>S</em>
+    </span>, but also
+    <span class="math inline">
+        <em>l</em>
+    </span>,
+    <span class="math inline">
+        <em>h</em>
+    </span>,
+    <span class="math inline">
+        <em>d</em>
+    </span>, etc.</p>
+<p>There are also various issues with the libraries we use. The SymPy treats the unit of a physical value as a variable,
+    so problems with printing may arise. Another problem is that SymPy does not know that Joule divided by Newton is a
+    meter. Not enough units are provided in the SymPy library. The library documentation is too short, and we have not found
+    a simple way to resolve these issues.</p>
+<h1 id="conclusions" class="section">CONCLUSIONS</h1>
+<p>In this paper, we have studied the automatic solving of physics word problems. PWP solving is a challenging subfield
+    of word problem solving that requires complex problem representation. We have found that researched solutions for math
+    word problems are unsuitable for solving PWP. Current PWP solvers are focused on specific problem types, while we were
+    interested in generic PWP solvers.</p>
+<p>To study our papers object and subject, we developed and described a program that could solve simple physics
+    problems. Our testing dataset was formed from Ukrainian physics textbooks. The development of word problem solvers
+    focuses mainly on problem representation, natural language processing, and problem-solving strategies.</p>
+<p>Our analysis shows that PWPs fall into five categories: theoretical, value conversion, value comparison, unknowns
+    finding, and value change problems.</p>
+<p>To convert problem text into the internal problem representation, we chose named entity recognition based on pattern
+    matching. Other techniques for NER besides pattern matching on tokens can be used to analyze problem text, such as
+    pattern matching on trees and statistical and neural models. Problem types are recognized based on the presence of
+    particular entities. While this approach was sufficient on our small dataset, we have noticed that this solution could
+    be easily broken. After NER, another step is required to convert a list of entities into the representation.</p>
+<p>We have found a new kind of ambiguity: “quantity without a term”. This type of ambiguity occurs when the program
+    finds a quantity entity that is a given value, but the program cannot infer the variable for this quantity. We partially
+    solved this problem by inferring the variable by the unit of the quantity.</p>
+<p>Our research shows that the algorithm for solving problems with unknown values is the STRIPS algorithm. Value change
+    problems are complex problems to solve because of many non-trivial parameters. We hypothesize that these problems cannot
+    be solved efficiently and belong to the class of “NP-hard” problems.</p>
+<p>While our program can solve static computational physics problems, it is obvious that there are many other types of
+    physics problems. Our program can be improved by choosing different NLP methods and by developing a more sophisticated
+    problem representation.</p>
+<h1 class="section" id="references">REFERENCES</h1>
+<div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list">
+    <div id="ref-nlp" class="csl-entry" role="listitem">
+        B., S. V., B. Majumder, A. Gupta, and H. Surana. 2020.
+        <em>Practical Natural Language Processing: A Comprehensive Guide to Building Real-World NLP
+                        Systems</em>. O’Reilly Media.
+    </div>
+    <div id="ref-student" class="csl-entry" role="listitem">
+        Bobrow, D. 1964.
+        <span>“Natural Language Input for a Computer Problem
+                                                            Solving System.”</span>
+        In
+        <em>Semantic Information Processing</em>,
+                                                            146–226. Cambridge, MA: USA:MIT Press.
+    </div>
+    <div id="ref-mecho" class="csl-entry" role="listitem">
+        Bundy, A., L. Byrd, G. Luger, C. Mellish, R. Milne, and M. Palmer. 1979.
+        <span>“MECHO: A Program to Solve Mechanics Problems.”</span>
+        <em>Department of Artificial Intelligence, University of Edinburgh</em>.
+                                                            https://doi.org/<a href="http://www.worldcat.org/title/mecho-a-program-to-solve-mechanics-problems/oclc/475999217.">
+            http://www.worldcat.org/title/mecho-a-program-to-solve-mechanics-problems/oclc/475999217.</a>
+    </div>
+    <div id="ref-strips" class="csl-entry" role="listitem">
+        Fikes, R. E., and N. J. Nilsson. 1971.
+        <span>“Strips: A New Approach to the Application of Theorem Proving to Problem
+            Solving.”</span>
+        <em>Artificial Intelligence</em>
+        2 (3): 189–208.
+        <a href="https://doi.org/10.1016/0004-3702(71)90010-5">https://doi.org/10.1016/0004-3702(71)90010-5</a>.
+    </div>
+    <div id="ref-frust_soc" class="csl-entry" role="listitem">
+        Gregorcic, B., and A.-M. Pendrill. 2023.
+        <span>“ChatGPT and the
+                                                            Frustrated Socrates.”</span>
+        <em>Physics Education</em>
+        58 (3): 035021.
+        <a href="https://doi.org/10.1088/1361-6552/acc299">https://doi.org/10.1088/1361-6552/acc299</a>.
+    </div>
+    <div id="ref-newton" class="csl-entry" role="listitem">
+        Kleer, J. 1977.
+        <span>“Multiples Representations of Knowledge in a Mechanics
+            Problem-Solver.”</span>
+        In
+        <em>Proceedings of the 5th International Joint Conference on Artificial
+            Intelligence</em>, 1:299–304. USA. San
+            Francisco, CA, USA: Morgan Kaufmann Publishers Inc.
+        <a href="https://doi.org/10.1016/B978-1-4832-1447-4.50009-2">https://doi.org/10.1016/B978-1-4832-1447-4.50009-2</a>.
+    </div>
+    <div id="ref-modern_pwp" class="csl-entry" role="listitem">
+        Leszczynski, Megan, and José E. Moreira. 2017.
+        <span>“Machine Solver for
+                                                            Physics Word Problems.”</span>
+        In.
+        <a href="https://api.semanticscholar.org/CorpusID:58605280">https://api.semanticscholar.org/CorpusID:58605280</a>.
+    </div>
+    <div id="ref-mwp_repr" class="csl-entry" role="listitem">
+        Mandal, S., and S. K. Naskar. 2019.
+        <span>“Solving Arithmetic Mathematical Word Problems: A Review and Recent
+            Advancements.”</span>
+        Edited by P. Chandra, D. Giri, F. Li, S. Kar, and D. K. Jana.
+        <em>Information Technology and Applied Mathematics</em>, 95–114.
+        <a href="https://doi.org/10.1007/978-981-10-7590-2_7">https://doi.org/10.1007/978-981-10-7590-2_7</a>.
+    </div>
+    <div id="ref-other_pwp" class="csl-entry" role="listitem">
+        Mukherjee, A., and U. Garain. 2008.
+        <span>“A Review of Methods for Automatic Understanding of Natural Language Mathematical
+                                    Problems.”</span>
+        <em>Artificial Intelligence Review</em>
+        29 (2):
+                                        93–122.
+        <a href="https://doi.org/10.1007/s10462-009-9110-0">https://doi.org/10.1007/s10462-009-9110-0</a>.
+    </div>
+    <div id="ref-paip" class="csl-entry" role="listitem">
+        Norvig. 1991.
+        <em>Paradigms of Artificial Intelligence Programming: Case Studies in Common
+            Lisp</em>. 1st ed. Morgan Kaufmann.
+        <a href="https://unglueit-files.s3.amazonaws.com/ebf/59f74a93bbc1435c9ca1557b4bb6e9ba.pdf">
+            https://unglueit-files.s3.amazonaws.com/ebf/59f74a93bbc1435c9ca1557b4bb6e9ba.pdf</a>.
+    </div>
+    <div id="ref-isaac" class="csl-entry" role="listitem">
+        Novak, G. S., Jr. 1976.
+        <span>“Computer Understanding of Physics Problems Stated in Natural
+            Language.”</span>
+        <em>American Journal of
+                                                            Computational Linguistics</em>.
+        <a href="https://aclanthology.org/J76-3005.">https://aclanthology.org/J76-3005.</a>
+    </div>
+    <div id="ref-aima" class="csl-entry" role="listitem">
+        Russell, S., and P. Norvig. 2009.
+        <em>Artificial Intelligence: A Modern
+                                                            Approach</em>. 3rd ed. USA: Prentice Hall Press.
+        <a href="https://people.engr.tamu.edu/guni/csce421/files/AI_Russell_Norvig.pdf">
+            https://people.engr.tamu.edu/guni/csce421/files/AI_Russell_Norvig.pdf</a>.
+    </div>
+    <div id="ref-mwp_nlp" class="csl-entry" role="listitem">
+        Zhang, Dongxiang, Lei Wang, Luming Zhang, Bing Tian Dai, and Heng Tao Shen. 2020.
+        <span>“The Gap of Semantic Parsing: A Survey on Automatic Math Word Problem
+            Solvers.”</span>
+        <em>IEEE Transactions on Pattern
+                                                            Analysis and Machine Intelligence</em>
+        42 (9): 2287–2305.
+        <a href="https://doi.org/10.1109/TPAMI.2019.2914054">https://doi.org/10.1109/TPAMI.2019.2914054</a>.
+    </div>
+    <div id="ref-ukr_ph_1" class="csl-entry" role="listitem">
+        Гельфгат, І. 2009.
+        <em>Фізика. 7 Клас: Збірник Задач</em>. 4th ed.
+                                                            Веста.
+    </div>
+    <div id="ref-ukr_ph_2" class="csl-entry" role="listitem">
+        Ненашев, І. 2011.
+        <em>Фізика. 8 Клас: Збірник Задач</em>. 5th ed. Веста.
+    </div>
+</div>
+
+        </div>
+        <hr> Copyright (c) 2023 Ruslan Popov
+        <p>My email:
+            <a href="mailto:ruslanpopov1512@gmail.com">ruslanpopov1512@gmail.com</a>;
+            <a href="mailto:popov_ro@ffeks.dnu.edu.ua">popov_ro@ffeks.dnu.edu.ua</a>.</p>
+        <p>You can find me everywhere by this nickname:
+            <strong>InAnYan</strong>.</p>
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+        <script id="MathJax-script" async="" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <svg style="display: none;" id="MJX-SVG-global-cache"><defs><path id="MJX-TEX-S4-23A7" d="M712 899L718 893V876V865Q718 854 704 846Q627 793 577 710T510 525Q510 524 509 521Q505 493 504 349Q504 345 504 334Q504 277 504 240Q504 -2 503 -4Q502 -8 494 -9T444 -10Q392 -10 390 -9Q387 -8 386 -5Q384 5 384 230Q384 262 384 312T383 382Q383 481 392 535T434 656Q510 806 664 892L677 899H712Z"></path><path id="MJX-TEX-S4-23A9" d="M718 -893L712 -899H677L666 -893Q542 -825 468 -714T385 -476Q384 -466 384 -282Q384 3 385 5L389 9Q392 10 444 10Q486 10 494 9T503 4Q504 2 504 -239V-310V-366Q504 -470 508 -513T530 -609Q546 -657 569 -698T617 -767T661 -812T699 -843T717 -856T718 -876V-893Z"></path><path id="MJX-TEX-S4-23A8" d="M389 1159Q391 1160 455 1160Q496 1160 498 1159Q501 1158 502 1155Q504 1145 504 924Q504 691 503 682Q494 549 425 439T243 259L229 250L243 241Q349 175 421 66T503 -182Q504 -191 504 -424Q504 -600 504 -629T499 -659H498Q496 -660 444 -660T390 -659Q387 -658 386 -655Q384 -645 384 -425V-282Q384 -176 377 -116T342 10Q325 54 301 92T255 155T214 196T183 222T171 232Q170 233 170 250T171 268Q171 269 191 284T240 331T300 407T354 524T383 679Q384 691 384 925Q384 1152 385 1155L389 1159Z"></path><path id="MJX-TEX-S4-23AA" d="M384 150V266Q384 304 389 309Q391 310 455 310Q496 310 498 309Q502 308 503 298Q504 283 504 150Q504 32 504 12T499 -9H498Q496 -10 444 -10T390 -9Q386 -8 385 2Q384 17 384 150Z"></path><path id="MJX-TEX-N-28" d="M94 250Q94 319 104 381T127 488T164 576T202 643T244 695T277 729T302 750H315H319Q333 750 333 741Q333 738 316 720T275 667T226 581T184 443T167 250T184 58T225 -81T274 -167T316 -220T333 -241Q333 -250 318 -250H315H302L274 -226Q180 -141 137 -14T94 250Z"></path><path id="MJX-TEX-I-1D436" d="M50 252Q50 367 117 473T286 641T490 704Q580 704 633 653Q642 643 648 636T656 626L657 623Q660 623 684 649Q691 655 699 663T715 679T725 690L740 705H746Q760 705 760 698Q760 694 728 561Q692 422 692 421Q690 416 687 415T669 413H653Q647 419 647 422Q647 423 648 429T650 449T651 481Q651 552 619 605T510 659Q484 659 454 652T382 628T299 572T226 479Q194 422 175 346T156 222Q156 108 232 58Q280 24 350 24Q441 24 512 92T606 240Q610 253 612 255T628 257Q648 257 648 248Q648 243 647 239Q618 132 523 55T319 -22Q206 -22 128 53T50 252Z"></path><path id="MJX-TEX-I-1D448" d="M107 637Q73 637 71 641Q70 643 70 649Q70 673 81 682Q83 683 98 683Q139 681 234 681Q268 681 297 681T342 682T362 682Q378 682 378 672Q378 670 376 658Q371 641 366 638H364Q362 638 359 638T352 638T343 637T334 637Q295 636 284 634T266 623Q265 621 238 518T184 302T154 169Q152 155 152 140Q152 86 183 55T269 24Q336 24 403 69T501 205L552 406Q599 598 599 606Q599 633 535 637Q511 637 511 648Q511 650 513 660Q517 676 519 679T529 683Q532 683 561 682T645 680Q696 680 723 681T752 682Q767 682 767 672Q767 650 759 642Q756 637 737 637Q666 633 648 597Q646 592 598 404Q557 235 548 205Q515 105 433 42T263 -22Q171 -22 116 34T60 167V183Q60 201 115 421Q164 622 164 628Q164 635 107 637Z"></path><path id="MJX-TEX-I-1D446" d="M308 24Q367 24 416 76T466 197Q466 260 414 284Q308 311 278 321T236 341Q176 383 176 462Q176 523 208 573T273 648Q302 673 343 688T407 704H418H425Q521 704 564 640Q565 640 577 653T603 682T623 704Q624 704 627 704T632 705Q645 705 645 698T617 577T585 459T569 456Q549 456 549 465Q549 471 550 475Q550 478 551 494T553 520Q553 554 544 579T526 616T501 641Q465 662 419 662Q362 662 313 616T263 510Q263 480 278 458T319 427Q323 425 389 408T456 390Q490 379 522 342T554 242Q554 216 546 186Q541 164 528 137T492 78T426 18T332 -20Q320 -22 298 -22Q199 -22 144 33L134 44L106 13Q83 -14 78 -18T65 -22Q52 -22 52 -14Q52 -11 110 221Q112 227 130 227H143Q149 221 149 216Q149 214 148 207T144 186T142 153Q144 114 160 87T203 47T255 29T308 24Z"></path><path id="MJX-TEX-I-1D447" d="M40 437Q21 437 21 445Q21 450 37 501T71 602L88 651Q93 669 101 677H569H659Q691 677 697 676T704 667Q704 661 687 553T668 444Q668 437 649 437Q640 437 637 437T631 442L629 445Q629 451 635 490T641 551Q641 586 628 604T573 629Q568 630 515 631Q469 631 457 630T439 622Q438 621 368 343T298 60Q298 48 386 46Q418 46 427 45T436 36Q436 31 433 22Q429 4 424 1L422 0Q419 0 415 0Q410 0 363 1T228 2Q99 2 64 0H49Q43 6 43 9T45 27Q49 40 55 46H83H94Q174 46 189 55Q190 56 191 56Q196 59 201 76T241 233Q258 301 269 344Q339 619 339 625Q339 630 310 630H279Q212 630 191 624Q146 614 121 583T67 467Q60 445 57 441T43 437H40Z"></path><path id="MJX-TEX-I-1D442" d="M740 435Q740 320 676 213T511 42T304 -22Q207 -22 138 35T51 201Q50 209 50 244Q50 346 98 438T227 601Q351 704 476 704Q514 704 524 703Q621 689 680 617T740 435ZM637 476Q637 565 591 615T476 665Q396 665 322 605Q242 542 200 428T157 216Q157 126 200 73T314 19Q404 19 485 98T608 313Q637 408 637 476Z"></path><path id="MJX-TEX-I-1D440" d="M289 629Q289 635 232 637Q208 637 201 638T194 648Q194 649 196 659Q197 662 198 666T199 671T201 676T203 679T207 681T212 683T220 683T232 684Q238 684 262 684T307 683Q386 683 398 683T414 678Q415 674 451 396L487 117L510 154Q534 190 574 254T662 394Q837 673 839 675Q840 676 842 678T846 681L852 683H948Q965 683 988 683T1017 684Q1051 684 1051 673Q1051 668 1048 656T1045 643Q1041 637 1008 637Q968 636 957 634T939 623Q936 618 867 340T797 59Q797 55 798 54T805 50T822 48T855 46H886Q892 37 892 35Q892 19 885 5Q880 0 869 0Q864 0 828 1T736 2Q675 2 644 2T609 1Q592 1 592 11Q592 13 594 25Q598 41 602 43T625 46Q652 46 685 49Q699 52 704 61Q706 65 742 207T813 490T848 631L654 322Q458 10 453 5Q451 4 449 3Q444 0 433 0Q418 0 415 7Q413 11 374 317L335 624L267 354Q200 88 200 79Q206 46 272 46H282Q288 41 289 37T286 19Q282 3 278 1Q274 0 267 0Q265 0 255 0T221 1T157 2Q127 2 95 1T58 0Q43 0 39 2T35 11Q35 13 38 25T43 40Q45 46 65 46Q135 46 154 86Q158 92 223 354T289 629Z"></path><path id="MJX-TEX-I-1D438" d="M492 213Q472 213 472 226Q472 230 477 250T482 285Q482 316 461 323T364 330H312Q311 328 277 192T243 52Q243 48 254 48T334 46Q428 46 458 48T518 61Q567 77 599 117T670 248Q680 270 683 272Q690 274 698 274Q718 274 718 261Q613 7 608 2Q605 0 322 0H133Q31 0 31 11Q31 13 34 25Q38 41 42 43T65 46Q92 46 125 49Q139 52 144 61Q146 66 215 342T285 622Q285 629 281 629Q273 632 228 634H197Q191 640 191 642T193 659Q197 676 203 680H757Q764 676 764 669Q764 664 751 557T737 447Q735 440 717 440H705Q698 445 698 453L701 476Q704 500 704 528Q704 558 697 578T678 609T643 625T596 632T532 634H485Q397 633 392 631Q388 629 386 622Q385 619 355 499T324 377Q347 376 372 376H398Q464 376 489 391T534 472Q538 488 540 490T557 493Q562 493 565 493T570 492T572 491T574 487T577 483L544 351Q511 218 508 216Q505 213 492 213Z"></path><path id="MJX-TEX-I-1D445" d="M230 637Q203 637 198 638T193 649Q193 676 204 682Q206 683 378 683Q550 682 564 680Q620 672 658 652T712 606T733 563T739 529Q739 484 710 445T643 385T576 351T538 338L545 333Q612 295 612 223Q612 212 607 162T602 80V71Q602 53 603 43T614 25T640 16Q668 16 686 38T712 85Q717 99 720 102T735 105Q755 105 755 93Q755 75 731 36Q693 -21 641 -21H632Q571 -21 531 4T487 82Q487 109 502 166T517 239Q517 290 474 313Q459 320 449 321T378 323H309L277 193Q244 61 244 59Q244 55 245 54T252 50T269 48T302 46H333Q339 38 339 37T336 19Q332 6 326 0H311Q275 2 180 2Q146 2 117 2T71 2T50 1Q33 1 33 10Q33 12 36 24Q41 43 46 45Q50 46 61 46H67Q94 46 127 49Q141 52 146 61Q149 65 218 339T287 628Q287 635 230 637ZM630 554Q630 586 609 608T523 636Q521 636 500 636T462 637H440Q393 637 386 627Q385 624 352 494T319 361Q319 360 388 360Q466 361 492 367Q556 377 592 426Q608 449 619 486T630 554Z"></path><path id="MJX-TEX-N-29" d="M60 749L64 750Q69 750 74 750H86L114 726Q208 641 251 514T294 250Q294 182 284 119T261 12T224 -76T186 -143T145 -194T113 -227T90 -246Q87 -249 86 -250H74Q66 -250 63 -250T58 -247T55 -238Q56 -237 66 -225Q221 -64 221 250T66 725Q56 737 55 738Q55 746 60 749Z"></path><path id="MJX-TEX-N-3D" d="M56 347Q56 360 70 367H707Q722 359 722 347Q722 336 708 328L390 327H72Q56 332 56 347ZM56 153Q56 168 72 173H708Q722 163 722 153Q722 140 707 133H70Q56 140 56 153Z"></path><path id="MJX-TEX-N-32" d="M109 429Q82 429 66 447T50 491Q50 562 103 614T235 666Q326 666 387 610T449 465Q449 422 429 383T381 315T301 241Q265 210 201 149L142 93L218 92Q375 92 385 97Q392 99 409 186V189H449V186Q448 183 436 95T421 3V0H50V19V31Q50 38 56 46T86 81Q115 113 136 137Q145 147 170 174T204 211T233 244T261 278T284 308T305 340T320 369T333 401T340 431T343 464Q343 527 309 573T212 619Q179 619 154 602T119 569T109 550Q109 549 114 549Q132 549 151 535T170 489Q170 464 154 447T109 429Z"></path><path id="MJX-TEX-N-2217" d="M229 286Q216 420 216 436Q216 454 240 464Q241 464 245 464T251 465Q263 464 273 456T283 436Q283 419 277 356T270 286L328 328Q384 369 389 372T399 375Q412 375 423 365T435 338Q435 325 425 315Q420 312 357 282T289 250L355 219L425 184Q434 175 434 161Q434 146 425 136T401 125Q393 125 383 131T328 171L270 213Q283 79 283 63Q283 53 276 44T250 35Q231 35 224 44T216 63Q216 80 222 143T229 213L171 171Q115 130 110 127Q106 124 100 124Q87 124 76 134T64 161Q64 166 64 169T67 175T72 181T81 188T94 195T113 204T138 215T170 230T210 250L74 315Q65 324 65 338Q65 353 74 363T98 374Q106 374 116 368T171 328L229 286Z"></path><path id="MJX-TEX-N-30" d="M96 585Q152 666 249 666Q297 666 345 640T423 548Q460 465 460 320Q460 165 417 83Q397 41 362 16T301 -15T250 -22Q224 -22 198 -16T137 16T82 83Q39 165 39 320Q39 494 96 585ZM321 597Q291 629 250 629Q208 629 178 597Q153 571 145 525T137 333Q137 175 145 125T181 46Q209 16 250 16Q290 16 318 46Q347 76 354 130T362 333Q362 478 354 524T321 597Z"></path><path id="MJX-TEX-N-2E" d="M78 60Q78 84 95 102T138 120Q162 120 180 104T199 61Q199 36 182 18T139 0T96 17T78 60Z"></path><path id="MJX-TEX-N-2B" d="M56 237T56 250T70 270H369V420L370 570Q380 583 389 583Q402 583 409 568V270H707Q722 262 722 250T707 230H409V-68Q401 -82 391 -82H389H387Q375 -82 369 -68V230H70Q56 237 56 250Z"></path><path id="MJX-TEX-I-1D434" d="M208 74Q208 50 254 46Q272 46 272 35Q272 34 270 22Q267 8 264 4T251 0Q249 0 239 0T205 1T141 2Q70 2 50 0H42Q35 7 35 11Q37 38 48 46H62Q132 49 164 96Q170 102 345 401T523 704Q530 716 547 716H555H572Q578 707 578 706L606 383Q634 60 636 57Q641 46 701 46Q726 46 726 36Q726 34 723 22Q720 7 718 4T704 0Q701 0 690 0T651 1T578 2Q484 2 455 0H443Q437 6 437 9T439 27Q443 40 445 43L449 46H469Q523 49 533 63L521 213H283L249 155Q208 86 208 74ZM516 260Q516 271 504 416T490 562L463 519Q447 492 400 412L310 260L413 259Q516 259 516 260Z"></path><path id="MJX-TEX-I-1D437" d="M287 628Q287 635 230 637Q207 637 200 638T193 647Q193 655 197 667T204 682Q206 683 403 683Q570 682 590 682T630 676Q702 659 752 597T803 431Q803 275 696 151T444 3L430 1L236 0H125H72Q48 0 41 2T33 11Q33 13 36 25Q40 41 44 43T67 46Q94 46 127 49Q141 52 146 61Q149 65 218 339T287 628ZM703 469Q703 507 692 537T666 584T629 613T590 629T555 636Q553 636 541 636T512 636T479 637H436Q392 637 386 627Q384 623 313 339T242 52Q242 48 253 48T330 47Q335 47 349 47T373 46Q499 46 581 128Q617 164 640 212T683 339T703 469Z"></path><path id="MJX-TEX-I-1D449" d="M52 648Q52 670 65 683H76Q118 680 181 680Q299 680 320 683H330Q336 677 336 674T334 656Q329 641 325 637H304Q282 635 274 635Q245 630 242 620Q242 618 271 369T301 118L374 235Q447 352 520 471T595 594Q599 601 599 609Q599 633 555 637Q537 637 537 648Q537 649 539 661Q542 675 545 679T558 683Q560 683 570 683T604 682T668 681Q737 681 755 683H762Q769 676 769 672Q769 655 760 640Q757 637 743 637Q730 636 719 635T698 630T682 623T670 615T660 608T652 599T645 592L452 282Q272 -9 266 -16Q263 -18 259 -21L241 -22H234Q216 -22 216 -15Q213 -9 177 305Q139 623 138 626Q133 637 76 637H59Q52 642 52 648Z"></path><path id="MJX-TEX-I-1D43C" d="M43 1Q26 1 26 10Q26 12 29 24Q34 43 39 45Q42 46 54 46H60Q120 46 136 53Q137 53 138 54Q143 56 149 77T198 273Q210 318 216 344Q286 624 286 626Q284 630 284 631Q274 637 213 637H193Q184 643 189 662Q193 677 195 680T209 683H213Q285 681 359 681Q481 681 487 683H497Q504 676 504 672T501 655T494 639Q491 637 471 637Q440 637 407 634Q393 631 388 623Q381 609 337 432Q326 385 315 341Q245 65 245 59Q245 52 255 50T307 46H339Q345 38 345 37T342 19Q338 6 332 0H316Q279 2 179 2Q143 2 113 2T65 2T43 1Z"></path><path id="MJX-TEX-I-1D441" d="M234 637Q231 637 226 637Q201 637 196 638T191 649Q191 676 202 682Q204 683 299 683Q376 683 387 683T401 677Q612 181 616 168L670 381Q723 592 723 606Q723 633 659 637Q635 637 635 648Q635 650 637 660Q641 676 643 679T653 683Q656 683 684 682T767 680Q817 680 843 681T873 682Q888 682 888 672Q888 650 880 642Q878 637 858 637Q787 633 769 597L620 7Q618 0 599 0Q585 0 582 2Q579 5 453 305L326 604L261 344Q196 88 196 79Q201 46 268 46H278Q284 41 284 38T282 19Q278 6 272 0H259Q228 2 151 2Q123 2 100 2T63 2T46 1Q31 1 31 10Q31 14 34 26T39 40Q41 46 62 46Q130 49 150 85Q154 91 221 362L289 634Q287 635 234 637Z"></path><path id="MJX-TEX-N-34" d="M462 0Q444 3 333 3Q217 3 199 0H190V46H221Q241 46 248 46T265 48T279 53T286 61Q287 63 287 115V165H28V211L179 442Q332 674 334 675Q336 677 355 677H373L379 671V211H471V165H379V114Q379 73 379 66T385 54Q393 47 442 46H471V0H462ZM293 211V545L74 212L183 211H293Z"></path><path id="MJX-TEX-N-35" d="M164 157Q164 133 148 117T109 101H102Q148 22 224 22Q294 22 326 82Q345 115 345 210Q345 313 318 349Q292 382 260 382H254Q176 382 136 314Q132 307 129 306T114 304Q97 304 95 310Q93 314 93 485V614Q93 664 98 664Q100 666 102 666Q103 666 123 658T178 642T253 634Q324 634 389 662Q397 666 402 666Q410 666 410 648V635Q328 538 205 538Q174 538 149 544L139 546V374Q158 388 169 396T205 412T256 420Q337 420 393 355T449 201Q449 109 385 44T229 -22Q148 -22 99 32T50 154Q50 178 61 192T84 210T107 214Q132 214 148 197T164 157Z"></path><path id="MJX-TEX-N-3F" d="M226 668Q190 668 162 656T124 632L114 621Q116 621 119 620T130 616T145 607T157 591T162 567Q162 544 147 529T109 514T71 528T55 566Q55 625 100 661T199 704Q201 704 210 704T224 705H228Q281 705 320 692T378 656T407 612T416 567Q416 503 361 462Q267 395 247 303Q242 279 242 241V224Q242 205 239 202T222 198T205 201T202 218V249Q204 320 220 371T255 445T292 491T315 537Q317 546 317 574V587Q317 604 315 615T304 640T277 661T226 668ZM162 61Q162 89 180 105T224 121Q247 119 264 104T281 61Q281 31 264 16T222 1Q197 1 180 16T162 61Z"></path><path id="MJX-TEX-N-37" d="M55 458Q56 460 72 567L88 674Q88 676 108 676H128V672Q128 662 143 655T195 646T364 644H485V605L417 512Q408 500 387 472T360 435T339 403T319 367T305 330T292 284T284 230T278 162T275 80Q275 66 275 52T274 28V19Q270 2 255 -10T221 -22Q210 -22 200 -19T179 0T168 40Q168 198 265 368Q285 400 349 489L395 552H302Q128 552 119 546Q113 543 108 522T98 479L95 458V455H55V458Z"></path><path id="MJX-TEX-N-A0" d=""></path><path id="MJX-TEX-I-1D458" d="M121 647Q121 657 125 670T137 683Q138 683 209 688T282 694Q294 694 294 686Q294 679 244 477Q194 279 194 272Q213 282 223 291Q247 309 292 354T362 415Q402 442 438 442Q468 442 485 423T503 369Q503 344 496 327T477 302T456 291T438 288Q418 288 406 299T394 328Q394 353 410 369T442 390L458 393Q446 405 434 405H430Q398 402 367 380T294 316T228 255Q230 254 243 252T267 246T293 238T320 224T342 206T359 180T365 147Q365 130 360 106T354 66Q354 26 381 26Q429 26 459 145Q461 153 479 153H483Q499 153 499 144Q499 139 496 130Q455 -11 378 -11Q333 -11 305 15T277 90Q277 108 280 121T283 145Q283 167 269 183T234 206T200 217T182 220H180Q168 178 159 139T145 81T136 44T129 20T122 7T111 -2Q98 -11 83 -11Q66 -11 57 -1T48 16Q48 26 85 176T158 471L195 616Q196 629 188 632T149 637H144Q134 637 131 637T124 640T121 647Z"></path><path id="MJX-TEX-I-1D456" d="M184 600Q184 624 203 642T247 661Q265 661 277 649T290 619Q290 596 270 577T226 557Q211 557 198 567T184 600ZM21 287Q21 295 30 318T54 369T98 420T158 442Q197 442 223 419T250 357Q250 340 236 301T196 196T154 83Q149 61 149 51Q149 26 166 26Q175 26 185 29T208 43T235 78T260 137Q263 149 265 151T282 153Q302 153 302 143Q302 135 293 112T268 61T223 11T161 -11Q129 -11 102 10T74 74Q74 91 79 106T122 220Q160 321 166 341T173 380Q173 404 156 404H154Q124 404 99 371T61 287Q60 286 59 284T58 281T56 279T53 278T49 278T41 278H27Q21 284 21 287Z"></path><path id="MJX-TEX-I-1D459" d="M117 59Q117 26 142 26Q179 26 205 131Q211 151 215 152Q217 153 225 153H229Q238 153 241 153T246 151T248 144Q247 138 245 128T234 90T214 43T183 6T137 -11Q101 -11 70 11T38 85Q38 97 39 102L104 360Q167 615 167 623Q167 626 166 628T162 632T157 634T149 635T141 636T132 637T122 637Q112 637 109 637T101 638T95 641T94 647Q94 649 96 661Q101 680 107 682T179 688Q194 689 213 690T243 693T254 694Q266 694 266 686Q266 675 193 386T118 83Q118 81 118 75T117 65V59Z"></path><path id="MJX-TEX-I-1D45C" d="M201 -11Q126 -11 80 38T34 156Q34 221 64 279T146 380Q222 441 301 441Q333 441 341 440Q354 437 367 433T402 417T438 387T464 338T476 268Q476 161 390 75T201 -11ZM121 120Q121 70 147 48T206 26Q250 26 289 58T351 142Q360 163 374 216T388 308Q388 352 370 375Q346 405 306 405Q243 405 195 347Q158 303 140 230T121 120Z"></path><path id="MJX-TEX-I-1D45A" d="M21 287Q22 293 24 303T36 341T56 388T88 425T132 442T175 435T205 417T221 395T229 376L231 369Q231 367 232 367L243 378Q303 442 384 442Q401 442 415 440T441 433T460 423T475 411T485 398T493 385T497 373T500 364T502 357L510 367Q573 442 659 442Q713 442 746 415T780 336Q780 285 742 178T704 50Q705 36 709 31T724 26Q752 26 776 56T815 138Q818 149 821 151T837 153Q857 153 857 145Q857 144 853 130Q845 101 831 73T785 17T716 -10Q669 -10 648 17T627 73Q627 92 663 193T700 345Q700 404 656 404H651Q565 404 506 303L499 291L466 157Q433 26 428 16Q415 -11 385 -11Q372 -11 364 -4T353 8T350 18Q350 29 384 161L420 307Q423 322 423 345Q423 404 379 404H374Q288 404 229 303L222 291L189 157Q156 26 151 16Q138 -11 108 -11Q95 -11 87 -5T76 7T74 17Q74 30 112 181Q151 335 151 342Q154 357 154 369Q154 405 129 405Q107 405 92 377T69 316T57 280Q55 278 41 278H27Q21 284 21 287Z"></path><path id="MJX-TEX-I-1D452" d="M39 168Q39 225 58 272T107 350T174 402T244 433T307 442H310Q355 442 388 420T421 355Q421 265 310 237Q261 224 176 223Q139 223 138 221Q138 219 132 186T125 128Q125 81 146 54T209 26T302 45T394 111Q403 121 406 121Q410 121 419 112T429 98T420 82T390 55T344 24T281 -1T205 -11Q126 -11 83 42T39 168ZM373 353Q367 405 305 405Q272 405 244 391T199 357T170 316T154 280T149 261Q149 260 169 260Q282 260 327 284T373 353Z"></path><path id="MJX-TEX-I-1D461" d="M26 385Q19 392 19 395Q19 399 22 411T27 425Q29 430 36 430T87 431H140L159 511Q162 522 166 540T173 566T179 586T187 603T197 615T211 624T229 626Q247 625 254 615T261 596Q261 589 252 549T232 470L222 433Q222 431 272 431H323Q330 424 330 420Q330 398 317 385H210L174 240Q135 80 135 68Q135 26 162 26Q197 26 230 60T283 144Q285 150 288 151T303 153H307Q322 153 322 145Q322 142 319 133Q314 117 301 95T267 48T216 6T155 -11Q125 -11 98 4T59 56Q57 64 57 83V101L92 241Q127 382 128 383Q128 385 77 385H26Z"></path><path id="MJX-TEX-I-1D45F" d="M21 287Q22 290 23 295T28 317T38 348T53 381T73 411T99 433T132 442Q161 442 183 430T214 408T225 388Q227 382 228 382T236 389Q284 441 347 441H350Q398 441 422 400Q430 381 430 363Q430 333 417 315T391 292T366 288Q346 288 334 299T322 328Q322 376 378 392Q356 405 342 405Q286 405 239 331Q229 315 224 298T190 165Q156 25 151 16Q138 -11 108 -11Q95 -11 87 -5T76 7T74 17Q74 30 114 189T154 366Q154 405 128 405Q107 405 92 377T68 316T57 280Q55 278 41 278H27Q21 284 21 287Z"></path><path id="MJX-TEX-I-1D460" d="M131 289Q131 321 147 354T203 415T300 442Q362 442 390 415T419 355Q419 323 402 308T364 292Q351 292 340 300T328 326Q328 342 337 354T354 372T367 378Q368 378 368 379Q368 382 361 388T336 399T297 405Q249 405 227 379T204 326Q204 301 223 291T278 274T330 259Q396 230 396 163Q396 135 385 107T352 51T289 7T195 -10Q118 -10 86 19T53 87Q53 126 74 143T118 160Q133 160 146 151T160 120Q160 94 142 76T111 58Q109 57 108 57T107 55Q108 52 115 47T146 34T201 27Q237 27 263 38T301 66T318 97T323 122Q323 150 302 164T254 181T195 196T148 231Q131 256 131 289Z"></path><path id="MJX-TEX-N-36" d="M42 313Q42 476 123 571T303 666Q372 666 402 630T432 550Q432 525 418 510T379 495Q356 495 341 509T326 548Q326 592 373 601Q351 623 311 626Q240 626 194 566Q147 500 147 364L148 360Q153 366 156 373Q197 433 263 433H267Q313 433 348 414Q372 400 396 374T435 317Q456 268 456 210V192Q456 169 451 149Q440 90 387 34T253 -22Q225 -22 199 -14T143 16T92 75T56 172T42 313ZM257 397Q227 397 205 380T171 335T154 278T148 216Q148 133 160 97T198 39Q222 21 251 21Q302 21 329 59Q342 77 347 104T352 209Q352 289 347 316T329 361Q302 397 257 397Z"></path><path id="MJX-TEX-I-210E" d="M137 683Q138 683 209 688T282 694Q294 694 294 685Q294 674 258 534Q220 386 220 383Q220 381 227 388Q288 442 357 442Q411 442 444 415T478 336Q478 285 440 178T402 50Q403 36 407 31T422 26Q450 26 474 56T513 138Q516 149 519 151T535 153Q555 153 555 145Q555 144 551 130Q535 71 500 33Q466 -10 419 -10H414Q367 -10 346 17T325 74Q325 90 361 192T398 345Q398 404 354 404H349Q266 404 205 306L198 293L164 158Q132 28 127 16Q114 -11 83 -11Q69 -11 59 -2T48 16Q48 30 121 320L195 616Q195 629 188 632T149 637H128Q122 643 122 645T124 664Q129 683 137 683Z"></path><path id="MJX-TEX-I-1D462" d="M21 287Q21 295 30 318T55 370T99 420T158 442Q204 442 227 417T250 358Q250 340 216 246T182 105Q182 62 196 45T238 27T291 44T328 78L339 95Q341 99 377 247Q407 367 413 387T427 416Q444 431 463 431Q480 431 488 421T496 402L420 84Q419 79 419 68Q419 43 426 35T447 26Q469 29 482 57T512 145Q514 153 532 153Q551 153 551 144Q550 139 549 130T540 98T523 55T498 17T462 -8Q454 -10 438 -10Q372 -10 347 46Q345 45 336 36T318 21T296 6T267 -6T233 -11Q189 -11 155 7Q103 38 103 113Q103 170 138 262T173 379Q173 380 173 381Q173 390 173 393T169 400T158 404H154Q131 404 112 385T82 344T65 302T57 280Q55 278 41 278H27Q21 284 21 287Z"></path><path id="MJX-TEX-I-1D443" d="M287 628Q287 635 230 637Q206 637 199 638T192 648Q192 649 194 659Q200 679 203 681T397 683Q587 682 600 680Q664 669 707 631T751 530Q751 453 685 389Q616 321 507 303Q500 302 402 301H307L277 182Q247 66 247 59Q247 55 248 54T255 50T272 48T305 46H336Q342 37 342 35Q342 19 335 5Q330 0 319 0Q316 0 282 1T182 2Q120 2 87 2T51 1Q33 1 33 11Q33 13 36 25Q40 41 44 43T67 46Q94 46 127 49Q141 52 146 61Q149 65 218 339T287 628ZM645 554Q645 567 643 575T634 597T609 619T560 635Q553 636 480 637Q463 637 445 637T416 636T404 636Q391 635 386 627Q384 621 367 550T332 412T314 344Q314 342 395 342H407H430Q542 342 590 392Q617 419 631 471T645 554Z"></path><path id="MJX-TEX-I-1D463" d="M173 380Q173 405 154 405Q130 405 104 376T61 287Q60 286 59 284T58 281T56 279T53 278T49 278T41 278H27Q21 284 21 287Q21 294 29 316T53 368T97 419T160 441Q202 441 225 417T249 361Q249 344 246 335Q246 329 231 291T200 202T182 113Q182 86 187 69Q200 26 250 26Q287 26 319 60T369 139T398 222T409 277Q409 300 401 317T383 343T365 361T357 383Q357 405 376 424T417 443Q436 443 451 425T467 367Q467 340 455 284T418 159T347 40T241 -11Q177 -11 139 22Q102 54 102 117Q102 148 110 181T151 298Q173 362 173 380Z"></path><path id="MJX-TEX-N-B1" d="M56 320T56 333T70 353H369V502Q369 651 371 655Q376 666 388 666Q402 666 405 654T409 596V500V353H707Q722 345 722 333Q722 320 707 313H409V40H707Q722 32 722 20T707 0H70Q56 7 56 20T70 40H369V313H70Q56 320 56 333Z"></path><path id="MJX-TEX-N-31" d="M213 578L200 573Q186 568 160 563T102 556H83V602H102Q149 604 189 617T245 641T273 663Q275 666 285 666Q294 666 302 660V361L303 61Q310 54 315 52T339 48T401 46H427V0H416Q395 3 257 3Q121 3 100 0H88V46H114Q136 46 152 46T177 47T193 50T201 52T207 57T213 61V578Z"></path><path id="MJX-TEX-I-1D439" d="M48 1Q31 1 31 11Q31 13 34 25Q38 41 42 43T65 46Q92 46 125 49Q139 52 144 61Q146 66 215 342T285 622Q285 629 281 629Q273 632 228 634H197Q191 640 191 642T193 659Q197 676 203 680H742Q749 676 749 669Q749 664 736 557T722 447Q720 440 702 440H690Q683 445 683 453Q683 454 686 477T689 530Q689 560 682 579T663 610T626 626T575 633T503 634H480Q398 633 393 631Q388 629 386 623Q385 622 352 492L320 363H375Q378 363 398 363T426 364T448 367T472 374T489 386Q502 398 511 419T524 457T529 475Q532 480 548 480H560Q567 475 567 470Q567 467 536 339T502 207Q500 200 482 200H470Q463 206 463 212Q463 215 468 234T473 274Q473 303 453 310T364 317H309L277 190Q245 66 245 60Q245 46 334 46H359Q365 40 365 39T363 19Q359 6 353 0H336Q295 2 185 2Q120 2 86 2T48 1Z"></path></defs></svg></body>
+</html>
