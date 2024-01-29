@@ -236,7 +236,7 @@ limitations of our implementation and proposed future research areas.
 <p>Solving word problems is a classic and challenging field of AI programming. The automatic solving of such problems
     involves natural language processing, a well-formed problem representation, and a good problem-solving strategy.</p>
 <p>In this paper, we want to study the automatic solving of physics word
-                    problems.</p>
+                        problems.</p>
 <p>There are several reasons for the relevance of our paper:</p>
 <ul>
     <li>
@@ -276,9 +276,8 @@ limitations of our implementation and proposed future research areas.
     text into mathematical expressions using pattern matching. The question mark is a special symbol used to denote the
     unknown value. The variables in the equation are subparts of the problem text.</p>
 <p>When the set of equations is unsolvable, the STUDENT will try to solve it again with several techniques applied. For
-    example, STUDENT may change variable names to be equal if they have some words in common (e.g., “<em>SPEED</em>” and “<em>SPEED OF THE CAR</em>”). Or, the
-                    STUDENT may add new equations from its internal knowledge of the
-                    world.</p>
+    example, STUDENT may change variable names to be equal if they have some words in common (e.g., “<em>SPEED</em>” and “<em>SPEED OF THE CAR</em>”).
+    Or, the STUDENT may add new equations from its internal knowledge of the world.</p>
 <p>The STUDENT program is nearly 60 years old. The field of AI programming has improved since that time. Peter Norvig
     presented an analysis and elegant implementation of STUDENT written in Common Lisp in functional programming style
     <span class="citation" data-cites="paip">(Norvig 1991)</span>.</p>
@@ -287,7 +286,7 @@ limitations of our implementation and proposed future research areas.
     knowledge of natural language processing and problem representation that is studied in this field of word
     problem-solving.</p>
 <p>Here is the list and analysis of different problem representations for MWPs structured by Mandal et
-    al.
+        al.
     <span class="citation" data-cites="mwp_repr">(Mandal and Naskar 2019)</span>:</p>
 <ul>
     <li>
@@ -319,7 +318,7 @@ limitations of our implementation and proposed future research areas.
 <p>There is not so much research and categorization on PWP solvers. Most programs date back to 1970-1980 and use their
     own knowledge representation and custom natural language processing methods.</p>
 <p>One of the first programs that could handle PWP is the NEWTON program
-                    by Kleer
+                        by Kleer
     <span class="citation" data-cites="newton">(Kleer 1977)</span>. It is made to solve mechanical problems. NEWTON would
         analyze the programs text and convert it to several data structures. The first data structure depicts objects, and the
         second is a tree-like data structure (called “envisioning tree”) that holds all possible states of the objects. The
@@ -340,8 +339,8 @@ limitations of our implementation and proposed future research areas.
 <p>The ISAAC program is big and complex. It is hard to analyze it because of its age and programming style. As the
     author states, 44 pages of Lisp code is written only for parsing the English text, while problem-solving is one of the
     simplest parts of the program. We were unable to find the source code of the ISAAC program.</p>
-<p>Bundy et al. created the MECHO program, which addresses mechanical
-                    PWPs and is implemented in Prolog
+<p>Bundy et al. created the MECHO program, which addresses mechanical PWPs and is implemented in
+    Prolog
     <span class="citation" data-cites="mecho">(Bundy et al. 1979)</span>. The program processes the word problem in several
         stages. First, it parses the text, extracting information. Then, MECHO derives assertions related to objects, given
         parameters, and unknown values from the parsed data. These assertions are then transformed into a particular data
@@ -364,10 +363,10 @@ limitations of our implementation and proposed future research areas.
     apply to make a generic PWP solver. Or at least the known methods cannot solve problems from Ukrainian physics
     textbooks.</p>
 <p>There are some issues in using STUDENT to solve physics problems.
-                    Consider the problem: “<em>If the
-    distance between Dnipro and Kyiv is 477 kilometers and the time the automobile has traveled is 6 hours, then what is the
-    speed of the automobile?</em>”. The STUDENT would generate
-                    this set of equations:</p>
+                        Consider the problem: “<em>If
+    the distance between Dnipro and Kyiv is 477 kilometers and the time the automobile has traveled is 6 hours, then what is
+    the speed of the automobile?</em>”. The STUDENT would generate
+                        this set of equations:</p>
 <p>
     <span class="math display"><mjx-container class="MathJax" jax="SVG" display="true" style="position: relative;"><svg style="vertical-align: -3.281ex;" xmlns="http://www.w3.org/2000/svg" width="34.691ex" height="7.692ex" role="img" focusable="false" viewBox="0 -1950 15333.6 3400" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true"><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)"><g data-mml-node="math"><g data-mml-node="mrow"><g data-mml-node="mo"><use data-c="23A7" xlink:href="#MJX-TEX-S4-23A7" transform="translate(0,1051)"></use><use data-c="23A9" xlink:href="#MJX-TEX-S4-23A9" transform="translate(0,-551)"></use><use data-c="23A8" xlink:href="#MJX-TEX-S4-23A8" transform="translate(0,0)"></use><svg width="889" height="81" y="1060" x="0" viewBox="0 14.3 889 81"><use data-c="23AA" xlink:href="#MJX-TEX-S4-23AA" transform="scale(1,0.398)"></use></svg><svg width="889" height="81" y="-641" x="0" viewBox="0 14.3 889 81"><use data-c="23AA" xlink:href="#MJX-TEX-S4-23AA" transform="scale(1,0.398)"></use></svg></g><g data-mml-node="mtable" transform="translate(889,0)"><g data-mml-node="mtr" transform="translate(0,1200)"><g data-mml-node="mtd"><g data-mml-node="mo"><use data-c="28" xlink:href="#MJX-TEX-N-28"></use></g><g data-mml-node="mi" transform="translate(389,0)"><use data-c="1D437" xlink:href="#MJX-TEX-I-1D437"></use></g><g data-mml-node="mi" transform="translate(1217,0)"><use data-c="1D43C" xlink:href="#MJX-TEX-I-1D43C"></use></g><g data-mml-node="mi" transform="translate(1721,0)"><use data-c="1D446" xlink:href="#MJX-TEX-I-1D446"></use></g><g data-mml-node="mi" transform="translate(2366,0)"><use data-c="1D447" xlink:href="#MJX-TEX-I-1D447"></use></g><g data-mml-node="mi" transform="translate(3070,0)"><use data-c="1D434" xlink:href="#MJX-TEX-I-1D434"></use></g><g data-mml-node="mi" transform="translate(3820,0)"><use data-c="1D441" xlink:href="#MJX-TEX-I-1D441"></use></g><g data-mml-node="mi" transform="translate(4708,0)"><use data-c="1D436" xlink:href="#MJX-TEX-I-1D436"></use></g><g data-mml-node="mi" transform="translate(5468,0)"><use data-c="1D438" xlink:href="#MJX-TEX-I-1D438"></use></g><g data-mml-node="mo" transform="translate(6232,0)"><use data-c="29" xlink:href="#MJX-TEX-N-29"></use></g><g data-mml-node="mo" transform="translate(6898.8,0)"><use data-c="3D" xlink:href="#MJX-TEX-N-3D"></use></g><g data-mml-node="mn" transform="translate(7954.6,0)"><use data-c="34" xlink:href="#MJX-TEX-N-34"></use><use data-c="37" xlink:href="#MJX-TEX-N-37" transform="translate(500,0)"></use><use data-c="37" xlink:href="#MJX-TEX-N-37" transform="translate(1000,0)"></use></g><g data-mml-node="mtext" transform="translate(9454.6,0)"><use data-c="A0" xlink:href="#MJX-TEX-N-A0"></use></g><g data-mml-node="mi" transform="translate(9704.6,0)"><use data-c="1D458" xlink:href="#MJX-TEX-I-1D458"></use></g><g data-mml-node="mi" transform="translate(10225.6,0)"><use data-c="1D456" xlink:href="#MJX-TEX-I-1D456"></use></g><g data-mml-node="mi" transform="translate(10570.6,0)"><use data-c="1D459" xlink:href="#MJX-TEX-I-1D459"></use></g><g data-mml-node="mi" transform="translate(10868.6,0)"><use data-c="1D45C" xlink:href="#MJX-TEX-I-1D45C"></use></g><g data-mml-node="mi" transform="translate(11353.6,0)"><use data-c="1D45A" xlink:href="#MJX-TEX-I-1D45A"></use></g><g data-mml-node="mi" transform="translate(12231.6,0)"><use data-c="1D452" xlink:href="#MJX-TEX-I-1D452"></use></g><g data-mml-node="mi" transform="translate(12697.6,0)"><use data-c="1D461" xlink:href="#MJX-TEX-I-1D461"></use></g><g data-mml-node="mi" transform="translate(13058.6,0)"><use data-c="1D452" xlink:href="#MJX-TEX-I-1D452"></use></g><g data-mml-node="mi" transform="translate(13524.6,0)"><use data-c="1D45F" xlink:href="#MJX-TEX-I-1D45F"></use></g><g data-mml-node="mi" transform="translate(13975.6,0)"><use data-c="1D460" xlink:href="#MJX-TEX-I-1D460"></use></g></g></g><g data-mml-node="mtr" transform="translate(0,0)"><g data-mml-node="mtd"><g data-mml-node="mo"><use data-c="28" xlink:href="#MJX-TEX-N-28"></use></g><g data-mml-node="mi" transform="translate(389,0)"><use data-c="1D447" xlink:href="#MJX-TEX-I-1D447"></use></g><g data-mml-node="mi" transform="translate(1093,0)"><use data-c="1D43C" xlink:href="#MJX-TEX-I-1D43C"></use></g><g data-mml-node="mi" transform="translate(1597,0)"><use data-c="1D440" xlink:href="#MJX-TEX-I-1D440"></use></g><g data-mml-node="mi" transform="translate(2648,0)"><use data-c="1D438" xlink:href="#MJX-TEX-I-1D438"></use></g><g data-mml-node="mo" transform="translate(3412,0)"><use data-c="29" xlink:href="#MJX-TEX-N-29"></use></g><g data-mml-node="mo" transform="translate(4078.8,0)"><use data-c="3D" xlink:href="#MJX-TEX-N-3D"></use></g><g data-mml-node="mn" transform="translate(5134.6,0)"><use data-c="36" xlink:href="#MJX-TEX-N-36"></use></g><g data-mml-node="mtext" transform="translate(5634.6,0)"><use data-c="A0" xlink:href="#MJX-TEX-N-A0"></use></g><g data-mml-node="mi" transform="translate(5884.6,0)"><use data-c="210E" xlink:href="#MJX-TEX-I-210E"></use></g><g data-mml-node="mi" transform="translate(6460.6,0)"><use data-c="1D45C" xlink:href="#MJX-TEX-I-1D45C"></use></g><g data-mml-node="mi" transform="translate(6945.6,0)"><use data-c="1D462" xlink:href="#MJX-TEX-I-1D462"></use></g><g data-mml-node="mi" transform="translate(7517.6,0)"><use data-c="1D45F" xlink:href="#MJX-TEX-I-1D45F"></use></g><g data-mml-node="mi" transform="translate(7968.6,0)"><use data-c="1D460" xlink:href="#MJX-TEX-I-1D460"></use></g></g></g><g data-mml-node="mtr" transform="translate(0,-1200)"><g data-mml-node="mtd"><g data-mml-node="mo"><use data-c="3F" xlink:href="#MJX-TEX-N-3F"></use></g><g data-mml-node="mo" transform="translate(749.8,0)"><use data-c="3D" xlink:href="#MJX-TEX-N-3D"></use></g><g data-mml-node="mo" transform="translate(1805.6,0)"><use data-c="28" xlink:href="#MJX-TEX-N-28"></use></g><g data-mml-node="mi" transform="translate(2194.6,0)"><use data-c="1D446" xlink:href="#MJX-TEX-I-1D446"></use></g><g data-mml-node="mi" transform="translate(2839.6,0)"><use data-c="1D443" xlink:href="#MJX-TEX-I-1D443"></use></g><g data-mml-node="mi" transform="translate(3590.6,0)"><use data-c="1D438" xlink:href="#MJX-TEX-I-1D438"></use></g><g data-mml-node="mi" transform="translate(4354.6,0)"><use data-c="1D438" xlink:href="#MJX-TEX-I-1D438"></use></g><g data-mml-node="mi" transform="translate(5118.6,0)"><use data-c="1D437" xlink:href="#MJX-TEX-I-1D437"></use></g><g data-mml-node="mo" transform="translate(5946.6,0)"><use data-c="29" xlink:href="#MJX-TEX-N-29"></use></g></g></g></g><g data-mml-node="mo" transform="translate(15333.6,0) translate(0 250)"></g></g></g></g></svg><mjx-assistive-mml unselectable="on" display="block"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><mrow data-mjx-texclass="INNER"><mo data-mjx-texclass="OPEN">{</mo><mtable columnalign="left left" columnspacing="1em" rowspacing=".2em"><mtr><mtd><mo stretchy="false">(</mo><mi>D</mi><mi>I</mi><mi>S</mi><mi>T</mi><mi>A</mi><mi>N</mi><mi>C</mi><mi>E</mi><mo stretchy="false">)</mo><mo>=</mo><mn>477</mn><mtext> </mtext><mi>k</mi><mi>i</mi><mi>l</mi><mi>o</mi><mi>m</mi><mi>e</mi><mi>t</mi><mi>e</mi><mi>r</mi><mi>s</mi></mtd></mtr><mtr><mtd><mo stretchy="false">(</mo><mi>T</mi><mi>I</mi><mi>M</mi><mi>E</mi><mo stretchy="false">)</mo><mo>=</mo><mn>6</mn><mtext> </mtext><mi>h</mi><mi>o</mi><mi>u</mi><mi>r</mi><mi>s</mi></mtd></mtr><mtr><mtd><mo>?</mo><mo>=</mo><mo stretchy="false">(</mo><mi>S</mi><mi>P</mi><mi>E</mi><mi>E</mi><mi>D</mi><mo stretchy="false">)</mo></mtd></mtr></mtable><mo data-mjx-texclass="CLOSE" fence="true" stretchy="true" symmetric="true"></mo></mrow></math></mjx-assistive-mml></mjx-container></span>
 </p>
@@ -387,7 +386,7 @@ limitations of our implementation and proposed future research areas.
 </ol>
 <p>In this example, STUDENT would add needed equations from its internal knowledge using the search on the first word of
     a variable (it may find the relation “<em>the distance is equal to time multiplied by
-                    speed</em>
+                        speed</em>
     ”). While this approach may work for simple problems like the one above, it is not the best solution because it is too
     chaotic and brute-force-like.</p>
 <p>The approaches presented in subsection 2.2 are not sufficient to represent physics problems. They are constructed
@@ -415,7 +414,7 @@ limitations of our implementation and proposed future research areas.
 <p>The whole NLP pipeline, algorithms, and data structures that are used by our program can be depicted through this
     diagram:</p>
 <figure>
-    <img src="/media/image2.png" style="width:75.0%">
+    <img src="/personal_website/media/image2.png" style="width:75.0%">
     <figcaption>Algorithms and data structures of our program.</figcaption>
 </figure>
 <p>In fig. 1 nodes represent algorithms, right after the node comes a brief comment on the chosen approach, and the
@@ -424,10 +423,10 @@ limitations of our implementation and proposed future research areas.
     English text.</p>
 <h2 id="testing-data" class="subsection">Testing data</h2>
 <p>To test our program, we created a small dataset with physics problems collected from various sources such
-        as
+            as
     <span class="citation" data-cites="ukr_ph_1">(Гельфгат 2009)</span>,
     <span class="citation" data-cites="ukr_ph_2">(Ненашев 2011)</span>, and the Internet. We
-                                        translated the Ukrainian variants to English.</p>
+                                                translated the Ukrainian variants to English.</p>
 <h1 id="description-of-the-program" class="section">DESCRIPTION OF THE PROGRAM</h1>
 <h2 id="problem-types" class="subsection">Problem types</h2>
 <p>The first thing we did before starting to make this program was to study available PWP. We noticed that PWPs fall
@@ -435,24 +434,25 @@ limitations of our implementation and proposed future research areas.
 <ul>
     <li>
         <p>Theoretical problem: “<em>Why do we not observe the daily rotation of the earth in everyday
-            life?</em>”.</p>
+                        life?</em>”.</p>
     </li>
     <li>
         <p>Value conversion problem: “<em>The car is traveling at a speed of 108 kilometers per hour. Represent this speed in
-                        meters per second</em>”.</p>
+            meters per second</em>”.</p>
     </li>
     <li>
-        <p>Value comparison problem: “<em>Which speed is bigger: 10 meters
-                                                            per second or 10 kilometers per hour?</em>”.</p>
+        <p>Value comparison problem: “<em>Which speed is bigger: 10 meters per second or 10 kilometers per
+            hour?</em>”.</p>
     </li>
     <li>
         <p>Unknowns finding problem: “<em>The car drove for 40 minutes at a speed of 144 kilometers per hour. How far did the
-                        car travel?</em>”.</p>
+            car travel?</em>”.</p>
     </li>
     <li>
         <p>Calculation of the change of a value depending on other value changes:
-            “<em>How many times will the speed of wave
-            propagation increase if the wavelength increases by three times and the period of oscillation remains unchanged?</em>”.</p>
+                        “<em>How many times will the
+            speed of wave propagation increase if the wavelength increases by three times and the period of oscillation remains
+            unchanged?</em>”.</p>
     </li>
 </ul>
 <p>We decided not to solve the theoretical problems because they require an extensive ontology of physics definitions
@@ -461,23 +461,23 @@ limitations of our implementation and proposed future research areas.
 <p>We chose the named entity recognition (NER) method for the feature extraction task. In this method, subparts of text,
     called entities, are marked with a particular string that represents the type of an entity.</p>
 <p>We have collected the information about which entities our program
-                    should recognize:</p>
+                        should recognize:</p>
 <ul>
     <li>
         <p>Given values: “<em>the distance is 10 kilometers</em>”, “<em>the
-                                                            mass is 50 grams</em>”, etc.</p>
+                                                                        mass is 50 grams</em>”, etc.</p>
     </li>
     <li>
         <p>Unknown values: “<em>What is the speed…</em>”, “<em>Determine the
-                                                            density of…</em>”, etc.</p>
+                                                                        density of…</em>”, etc.</p>
     </li>
     <li>
         <p>Units: “<em>meters per second</em>”, “<em>kilogram</em>”,
-                                                            “<em>Newton</em>”, etc.</p>
+                                                                        “<em>Newton</em>”, etc.</p>
     </li>
     <li>
         <p>Value changes: “<em>time is increased by a factor of 2</em>”,
-                                                            etc.</p>
+                                                                        etc.</p>
     </li>
 </ul>
 <p>For NER, we chose a rule-based method – pattern matching. We will present the patterns we used for NER with our
@@ -489,22 +489,22 @@ limitations of our implementation and proposed future research areas.
 <p>Here is the list of all the rules:</p>
 <div class="grammar">
     <p>&lt;unit_name&gt; ::= meter | hour | kilogram | candela | lux |
-                                        ...</p>
+                                                ...</p>
     <p>&lt;modifier&gt; ::= cubic | square</p>
     <p>&lt;single_unit&gt; ::= [&lt;modifier&gt;] &lt;unit_name&gt;</p>
     <p>&lt;compound_unit&gt; ::= &lt;single_unit&gt; per
-                                        &lt;single_unit&gt;</p>
+                                                &lt;single_unit&gt;</p>
     <p>&lt;UNIT&gt; ::= &lt;single_unit&gt; | &lt;compound_unit&gt;</p>
     <p>&lt;QUANTITY&gt; ::= &lt;like_num&gt; &lt;UNIT&gt;</p>
-    <p>&lt;COMPARISON_WORD&gt; ::= greater | faster | bigger | larger |
-                                        slower | less | ...</p>
-    <p>&lt;single_term&gt; ::= density | volume | speed | length | moment |
-                                        force | ...</p>
+    <p>&lt;COMPARISON_WORD&gt; ::= greater | faster | bigger | larger | slower | less |
+        ...</p>
+    <p>&lt;single_term&gt; ::= density | volume | speed | length | moment | force |
+        ...</p>
     <p>&lt;compound_term&gt; ::= ampere force | wave propagation | ...</p>
     <p>&lt;simple_term&gt; ::= &lt;single_term&gt; |
-                                        &lt;compound_term&gt;</p>
+                                                &lt;compound_term&gt;</p>
     <p>&lt;of_term&gt; ::= &lt;simple_term&gt; of [&lt;determiner&gt;]
-                                        &lt;simple_term&gt;</p>
+        &lt;simple_term&gt;</p>
     <p>&lt;TERM&gt; ::= &lt;simple_term&gt; | &lt;of_term&gt;</p>
     <p>&lt;UNKNOWN_QUESTION&gt; ::= what | determine | calculate</p>
     <p>&lt;special_unknown_word&gt; ::= far | fast | often</p>
@@ -513,25 +513,25 @@ limitations of our implementation and proposed future research areas.
     <p>&lt;pos_change_word&gt; ::= increase</p>
     <p>&lt;determiner&gt; ::= a | an | the</p>
     <p>&lt;change_pattern&gt; ::= by [&lt;determiner&gt; factor of]
-                                        &lt;like_num&gt;</p>
+                                                &lt;like_num&gt;</p>
     <p>&lt;NEG_CHANGE&gt; ::= &lt;neg_change_word&gt;
-                                        &lt;change_pattern&gt;</p>
+                                                &lt;change_pattern&gt;</p>
     <p>&lt;POS_CHANGE&gt; ::= &lt;pos_change_word&gt;
-                                        &lt;change_pattern&gt;</p>
-    <p>&lt;CHANGE_VERB&gt; ::= &lt;pos_change_word&gt; |
-                                        &lt;neg_change_word&gt; | change</p>
+                                                &lt;change_pattern&gt;</p>
+    <p>&lt;CHANGE_VERB&gt; ::= &lt;pos_change_word&gt; | &lt;neg_change_word&gt; |
+        change</p>
 </div>
 <p>We provide here an example of NER to understand this process
-                    better:</p>
+                        better:</p>
 <figure>
-    <img src="/media/image3.png">
+    <img src="/personal_website/media/image3.png">
     <figcaption>Example of named entity recognition for an unknown finding
-                                        problem.</figcaption>
+                                                problem.</figcaption>
 </figure>
 <figure>
-    <img src="/media/image4.png">
+    <img src="/personal_website/media/image4.png">
     <figcaption>Example of named entity recognition for a value change
-                                        problem.</figcaption>
+                                                problem.</figcaption>
 </figure>
 <h2 id="problem-type-recognition" class="subsection">Problem type recognition</h2>
 <p>The program determines the type of problem by looking at the presence of entities. The algorithm can be described in
@@ -539,23 +539,23 @@ limitations of our implementation and proposed future research areas.
 <ol>
     <li>
         <p>If there is a CHANGE_VERB entity, then it is a value change
-                                                            problem.</p>
-    </li>
-    <li>
-        <p>If there is a UNIT entity, then it is a conversion
-                                                            problem.</p>
-    </li>
-    <li>
-        <p>If there is a COMPARSON_WORD entity, then it is a comparison
-                                                            problem.</p>
-    </li>
-    <li>
-        <p>If there is an UNKNOWN_QUESTION or UNKNOWN_HOW_QUESTION entity, then it is an unknown finding
             problem.</p>
     </li>
     <li>
+        <p>If there is a UNIT entity, then it is a conversion
+            problem.</p>
+    </li>
+    <li>
+        <p>If there is a COMPARSON_WORD entity, then it is a comparison
+            problem.</p>
+    </li>
+    <li>
+        <p>If there is an UNKNOWN_QUESTION or UNKNOWN_HOW_QUESTION entity, then it is an unknown finding
+                        problem.</p>
+    </li>
+    <li>
         <p>Otherwise, the program cannot recognize the type of
-                                                            problem.</p>
+            problem.</p>
     </li>
 </ol>
 <h2 id="entities-to-problem-representation-conversion" class="subsection">Entities to problem representation conversion</h2>
@@ -564,18 +564,18 @@ limitations of our implementation and proposed future research areas.
 <ol>
     <li>
         <p>For value conversion problem, extract a quantity and a
-                                                            unit.</p>
+            unit.</p>
     </li>
     <li>
         <p>For value comparison problems, extract two quantities.</p>
     </li>
     <li>
         <p>For unknowns finding problem, extract given and unknown
-                                                            values.</p>
+            values.</p>
     </li>
     <li>
         <p>For value change problems, extract the value changes and the value in
-            question.</p>
+                        question.</p>
     </li>
 </ol>
 <p>To convert a quantity into the internal math representation, the program converts the number (the first token) and
@@ -583,9 +583,8 @@ limitations of our implementation and proposed future research areas.
 <p>We have found that units in SymPy are written as regular English words, allowing us to use Python’s insecure “eval”
     function. The program will convert the unit entity into a valid Python expression and call the “eval” function. We
     replace the word “<em>per</em>” with the division
-                    symbol. To parse the modifiers “<em>square</em>” and “<em>cube</em>”, we
-                    replace those words with “**2” and “**3”, respectively, after the single
-                    unit.</p>
+                        symbol. To parse the modifiers “<em>square</em>” and “<em>cube</em>”,
+    we replace those words with “**2” and “**3”, respectively, after the single unit.</p>
 <p>We have found two ways in which given values are encoded in the list of entities. It is either a pair of TERM and
     QUANTITY or a single QUANTITY.</p>
 <p>To convert the pair of TERM and QUANTITY into a given value, the program needs to convert the term into a symbol (the
@@ -594,22 +593,22 @@ limitations of our implementation and proposed future research areas.
     <span class="math inline">
         <em>F</em>
     </span>,
-                    “<em>mass</em>” is
+                        “<em>mass</em>” is
     <span class="math inline">
         <em>m</em>
     </span>,
-                    etc.).</p>
+                        etc.).</p>
 <p>A special technique for determining the symbol should be applied to convert a single QUANTITY into a given value. We
     have found that looking at the unit of a quantity can infer the variable. If the unit is one English word, the program
     uses a hard-coded map data structure (e.g., “<em>meters</em>” is
     <span class="math inline">
         <em>S</em>
     </span>,
-                    “<em>seconds</em>” is
+                        “<em>seconds</em>” is
     <span class="math inline">
         <em>t</em>
     </span>,
-                    etc.).</p>
+                        etc.).</p>
 <p>The conversion of compound units and units with modifiers is tricky. However, we noticed that compound units resemble
     a physical formula (e.g., “<em>meters per second</em>” corresponds to
     <span class="math inline"><mjx-container class="MathJax" jax="SVG" style="position: relative;"><svg style="vertical-align: -0.798ex;" xmlns="http://www.w3.org/2000/svg" width="6.142ex" height="2.817ex" role="img" focusable="false" viewBox="0 -892.5 2714.6 1245.3" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true"><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)"><g data-mml-node="math"><g data-mml-node="mi"><use data-c="1D463" xlink:href="#MJX-TEX-I-1D463"></use></g><g data-mml-node="mo" transform="translate(762.8,0)"><use data-c="3D" xlink:href="#MJX-TEX-N-3D"></use></g><g data-mml-node="mfrac" transform="translate(1818.6,0)"><g data-mml-node="mi" transform="translate(220,394) scale(0.707)"><use data-c="1D446" xlink:href="#MJX-TEX-I-1D446"></use></g><g data-mml-node="mi" transform="translate(320.4,-345) scale(0.707)"><use data-c="1D461" xlink:href="#MJX-TEX-I-1D461"></use></g><rect width="656.1" height="60" x="120" y="220"></rect></g></g></g></svg><mjx-assistive-mml unselectable="on" display="inline"><math xmlns="http://www.w3.org/1998/Math/MathML"><mi>v</mi><mo>=</mo><mfrac><mi>S</mi><mi>t</mi></mfrac></math></mjx-assistive-mml></mjx-container></span>, etc.). So, the program will first convert all one-word units in the
@@ -620,11 +619,11 @@ limitations of our implementation and proposed future research areas.
 <p>Unknown values are encoded either as a pair of UNKNOWN_QUESTION and TERM or as a single UNKNOWN_HOW_QUESTION. For the
     first variant, it is sufficient to convert the TERM into a variable, and for the second variant, we use a hard-coded map
     data structure (e.g., “<em>how
-                    far</em>” is
+                        far</em>” is
     <span class="math inline">
         <em>S</em>
     </span>, “<em>how
-                                        fast</em>” is
+                                                fast</em>” is
     <span class="math inline">
         <em>υ</em>
     </span>, etc.).</p>
@@ -646,7 +645,7 @@ limitations of our implementation and proposed future research areas.
 <ul>
     <li>
         <p>The program could find several applicable formulas for one
-                                                            unknown.</p>
+            unknown.</p>
     </li>
     <li>
         <p>The formula may contain an unknown variable (a variable that is not given). However, it is possible to find another
@@ -654,7 +653,7 @@ limitations of our implementation and proposed future research areas.
     </li>
     <li>
         <p>One physical formula can be used to find several variables. Consider the second Newton’s
-                        law:
+                                    law:
             <span class="math inline">
                 <em>F</em>
                 =
@@ -675,14 +674,14 @@ limitations of our implementation and proposed future research areas.
     </li>
     <li>
         <p>If the set is empty, return a list of one element containing the found formula (base
-                        case).</p>
+                                    case).</p>
     </li>
     <li>
         <p>Otherwise, perform these steps:</p>
         <ol>
             <li>
                 <p>For each element in the set, apply this algorithm (recursive
-                                        step).</p>
+                                                            step).</p>
             </li>
             <li>
                 <p>Combine all the results. The final result is a list.</p>
@@ -713,18 +712,18 @@ limitations of our implementation and proposed future research areas.
 <ol>
     <li>
         <p>Find a formula for which the given variables are a subset of the formula’s
-                        variables.</p>
+                                    variables.</p>
     </li>
     <li>
         <p>Substitute each formula variable with the given variables as a “factor *
-                        variable”.</p>
+                                    variable”.</p>
     </li>
     <li>
         <p>Divide the derived formula with the original formula.</p>
     </li>
     <li>
         <p>If the result is a number, then it is the answer to the
-                                                            problem.</p>
+            problem.</p>
     </li>
     <li>
         <p>Otherwise, repeat from step #1 and find another formula.</p>
@@ -733,34 +732,34 @@ limitations of our implementation and proposed future research areas.
 <p>The algorithm may fail at step 1 or 5, meaning the program could not find the formula to calculate the change. The
     algorithm is simple, and it resembles human thinking.</p>
 <h2 id="context" class="subsection">Context</h2>
-<p>The first time we made a prototype of the program, we noticed it was
-                    limited. Consider a problem: “<em>What is the optical power of a
-                    converging lens with a focal length of 40 centimeters?</em>”. A special
-                    formula solves this problem (<span class="math inline"><mjx-container class="MathJax" jax="SVG" style="position: relative;"><svg style="vertical-align: -0.781ex;" xmlns="http://www.w3.org/2000/svg" width="8.844ex" height="2.737ex" role="img" focusable="false" viewBox="0 -864.9 3909.2 1209.9" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true"><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)"><g data-mml-node="math"><g data-mml-node="mi"><use data-c="1D437" xlink:href="#MJX-TEX-I-1D437"></use></g><g data-mml-node="mo" transform="translate(1105.8,0)"><use data-c="3D" xlink:href="#MJX-TEX-N-3D"></use></g><g data-mml-node="mo" transform="translate(2161.6,0)"><use data-c="B1" xlink:href="#MJX-TEX-N-B1"></use></g><g data-mml-node="mfrac" transform="translate(2939.6,0)"><g data-mml-node="mn" transform="translate(308,394) scale(0.707)"><use data-c="31" xlink:href="#MJX-TEX-N-31"></use></g><g data-mml-node="mi" transform="translate(220,-345) scale(0.707)"><use data-c="1D439" xlink:href="#MJX-TEX-I-1D439"></use></g><rect width="729.6" height="60" x="120" y="220"></rect></g></g></g></svg><mjx-assistive-mml unselectable="on" display="inline"><math xmlns="http://www.w3.org/1998/Math/MathML"><mi>D</mi><mo>=</mo><mo>±</mo><mfrac><mn>1</mn><mi>F</mi></mfrac></math></mjx-assistive-mml></mjx-container></span>
+<p>The first time we made a prototype of the program, we noticed it was limited. Consider a problem:
+    “<em>What is the optical power of a
+                        converging lens with a focal length of 40 centimeters?</em>”. A special
+                        formula solves this problem (<span class="math inline"><mjx-container class="MathJax" jax="SVG" style="position: relative;"><svg style="vertical-align: -0.781ex;" xmlns="http://www.w3.org/2000/svg" width="8.844ex" height="2.737ex" role="img" focusable="false" viewBox="0 -864.9 3909.2 1209.9" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true"><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)"><g data-mml-node="math"><g data-mml-node="mi"><use data-c="1D437" xlink:href="#MJX-TEX-I-1D437"></use></g><g data-mml-node="mo" transform="translate(1105.8,0)"><use data-c="3D" xlink:href="#MJX-TEX-N-3D"></use></g><g data-mml-node="mo" transform="translate(2161.6,0)"><use data-c="B1" xlink:href="#MJX-TEX-N-B1"></use></g><g data-mml-node="mfrac" transform="translate(2939.6,0)"><g data-mml-node="mn" transform="translate(308,394) scale(0.707)"><use data-c="31" xlink:href="#MJX-TEX-N-31"></use></g><g data-mml-node="mi" transform="translate(220,-345) scale(0.707)"><use data-c="1D439" xlink:href="#MJX-TEX-I-1D439"></use></g><rect width="729.6" height="60" x="120" y="220"></rect></g></g></g></svg><mjx-assistive-mml unselectable="on" display="inline"><math xmlns="http://www.w3.org/1998/Math/MathML"><mi>D</mi><mo>=</mo><mo>±</mo><mfrac><mn>1</mn><mi>F</mi></mfrac></math></mjx-assistive-mml></mjx-container></span>
     ). However, the formula varies whether the lens is a converging lens or a diverging lens. Another situation when we find
     this peculiarity is when we need to calculate the surface of an object (squares, rectangles, triangles, etc.).</p>
 <p>We introduce the term context to encode the information about a physical object. Context is a set of strings that
     encode objects and their qualities. Examples of context words: “<em>lens</em>”,
-                    “<em>converging</em>”, “<em>diverging</em>”, “<em>square</em>”,
-                    “<em>cube</em>”, “<em>rectangle</em>”, etc. In each physics problem,
-                    there is an associated context.</p>
+                        “<em>converging</em>”, “<em>diverging</em>”, “<em>square</em>”,
+                        “<em>cube</em>”, “<em>rectangle</em>”, etc. In each physics problem,
+                        there is an associated context.</p>
 <h1 id="results" class="section">RESULTS</h1>
 <h2 id="examples-of-program-usage" class="subsection">Examples of program usage</h2>
 <p>We will present the solution of 4 problems with different types and comment on how the program solved
-        them.</p>
-<p>Problem #1: “<em>The car is traveling at a speed of 108 kilometers
-                    per hour. Represent this speed in meters per second</em>”.</p>
+            them.</p>
+<p>Problem #1: “<em>The car is traveling at a speed of 108 kilometers per hour. Represent this speed in meters per
+    second</em>”.</p>
 <figure>
-    <img src="/media/image5.png">
+    <img src="/personal_website/media/image5.png">
     <figcaption>The program results for problem #1.</figcaption>
 </figure>
 <p>Problem #1 is a conversion problem. We haven’t found many problems of this type. The program correctly recognized the
     given quantity and target unit. There is no detailed explanation of the solution because conversion is a primitive
     operation in SymPy.</p>
 <p>Problem #2: “<em>Which speed is slower: 72 kilometers per hour or 24
-                    meters per second?</em>”.</p>
+                        meters per second?</em>”.</p>
 <figure>
-    <img src="/media/image6.png">
+    <img src="/personal_website/media/image6.png">
     <figcaption>The program results for problem #2.</figcaption>
 </figure>
 <p>Problem #2 is a comparison problem. It is not trivial to compare
@@ -773,7 +772,7 @@ limitations of our implementation and proposed future research areas.
 <p>Problem #3: “<em>To raise a marble column weighing 3.78 tons from the bottom of a lake, 95200 joules of work was
     done. Determine the depth of the lake</em>”.</p>
 <figure>
-    <img src="/media/image7.png">
+    <img src="/personal_website/media/image7.png">
     <figcaption>The program result for problem #3.</figcaption>
 </figure>
 <p>Problem #3 is an unknown finding problem. We chose this problem because it is not so trivial to solve; it includes
@@ -785,20 +784,20 @@ limitations of our implementation and proposed future research areas.
 <p>Problem #4: “<em>How many times will the moment of a force change if the force is increased by a factor of 8 and the
     arm of the force is decreased by a factor of 4?</em>”.</p>
 <figure>
-    <img src="/media/image8.png">
+    <img src="/personal_website/media/image8.png">
     <figcaption>The program results for problem #4.</figcaption>
 </figure>
 <p>Problem #4 is a value change problem. A parser is needed to convert the list of entities to the problem
     representation fully. The program correctly recognized the given changes and the value under question. The program found
     the required formula and performed a substitution, which resulted in a number.</p>
 <p>Special attention is required to the term entities. We included the
-                    preposition “<em>of</em>” in the
-    term. Usually, while recognizing noun phrases (NP), different NPs stay away, but we combined them and determined the
+                        preposition “<em>of</em>” in
+    the term. Usually, while recognizing noun phrases (NP), different NPs stay away, but we combined them and determined the
     variable based on the first words. If we did not make this decision, an ambiguity would arise: do we need to find the
     change of the moment or the force?</p>
 <h2 id="analysis-of-limitations-of-the-program" class="subsection">Analysis of limitations of the program</h2>
 <p>We performed a thorough analysis of issues that our program has. We grouped the issues into several
-    categories:</p>
+        categories:</p>
 <ol>
     <li>
         <p>Complex problem types.</p>
@@ -824,7 +823,7 @@ limitations of our implementation and proposed future research areas.
 </ol>
 <p>We want to begin the analysis of the limitations of our program by analyzing our problem-type classification. We have
     found that our types can have new subtypes. Consider the problem: “<em>Can
-        a wedding ring with a volume of 0.5 cubic centimeters and a mass of 8 grams really be gold?</em>
+            a wedding ring with a volume of 0.5 cubic centimeters and a mass of 8 grams really be gold?</em>
     ”. It is a new question type for which the answer is a Boolean value. But it is easy to notice that this is a subtype of
     unknown finding problem. The program must compare the object’s density to the actual gold density.</p>
 <p>There are lots of issues with natural language processing. We have found that the solution to the problem depends
@@ -835,11 +834,11 @@ limitations of our implementation and proposed future research areas.
 <p>Pattern matching, used for NER, restricts the input text to a specific syntax. For example, we require that the units
     are written as proper English words instead of their abbreviations. The program cannot recognize numbers that are not
     written with decimal notation (e.g., “<em>one second</em>”). The patterns require that every quantity has a
-                    corresponding unit (the program cannot parse “<em>1 and 4
-                    kilograms</em>” as two quantities). Change of a value should be written
-                    as “<em>increased by 9</em>” or “<em>reduced by a factor of 2</em>” (but
-                    the program cannot parse “<em>the value is halved</em>” or
-                    “<em>doubled</em>
+                        corresponding unit (the program cannot parse “<em>1 and 4
+                        kilograms</em>” as two quantities). Change of a value should be written
+                        as “<em>increased by 9</em>” or “<em>reduced by a factor of 2</em>” (but
+                        the program cannot parse “<em>the value is halved</em>” or
+                        “<em>doubled</em>
     ”). There are many ways to formulate the problem, so there could be lots of patterns in the text that the programmer may
     miss.</p>
 <p>Another interesting problem that our application has is that it cannot support tasks with named constants. The
@@ -848,16 +847,15 @@ limitations of our implementation and proposed future research areas.
         <em>k</em>
         <em>m</em>
     </span>. Also
-                    consider the problem: “<em>Find the volume of mercury weighing 2
-                                        kilograms</em>
+                        consider the problem: “<em>Find the volume of mercury weighing 2
+                                                kilograms</em>
     ”. The program needs to refer to the table of densities and update the problem representation. Our implementation does
     not do it.</p>
 <p>The most interesting issue with parsing English text is that it is easy to deceive the program. Consider the problem:
-    “<em>The airplane
-                    flew 1200 kilometers in 2 hours. At what speed did the airplane
-                    fly?</em>”. The program can handle it. But if the user adds this
-                    sentence to the end of the text: “<em>Represent the result in meters per
-                    second</em>
+    “<em>The
+    airplane flew 1200 kilometers in 2 hours. At what speed did the airplane fly?</em>”. The program can handle it. But if the user adds this
+                        sentence to the end of the text: “<em>Represent the result in meters per
+                        second</em>
     ”, then our implementation will think that this problem is a value conversion problem. So, looking at keywords is not
     the best approach to determine the type of problem.</p>
 <p>Our problem representation is too basic. The physics problem is not a set of given variables and unknowns. An image
@@ -879,7 +877,7 @@ limitations of our implementation and proposed future research areas.
     variables will be reduced in the division step. But if the formula is formed with addition, then this strategy will not
     work.</p>
 <p>Consider the problem: “<em>How would the mass of an iron ball change
-                    if its radius is increased by a factor of two?</em>
+                        if its radius is increased by a factor of two?</em>
     ”. This problem requires two formulas to find (one for the volume and one that involves the density of iron). It is easy
     to notice that we can reuse the STRIPS algorithm to find the unknowns of the first formula, but there lies a new degree
     of complexity.</p>
@@ -901,7 +899,7 @@ limitations of our implementation and proposed future research areas.
         = 2
         <em>m</em>
     </span>. We have found that this is another ambiguity in our implementation. This entity can be not
-        only
+            only
     <span class="math inline">
         <em>S</em>
     </span>, but also
@@ -947,27 +945,27 @@ limitations of our implementation and proposed future research areas.
     <div id="ref-nlp" class="csl-entry" role="listitem">
         B., S. V., B. Majumder, A. Gupta, and H. Surana. 2020.
         <em>Practical Natural Language Processing: A Comprehensive Guide to Building Real-World NLP
-                        Systems</em>. O’Reilly Media.
+            Systems</em>. O’Reilly Media.
     </div>
     <div id="ref-student" class="csl-entry" role="listitem">
         Bobrow, D. 1964.
-        <span>“Natural Language Input for a Computer Problem
-                                                            Solving System.”</span>
+        <span>“Natural Language Input for a Computer Problem Solving
+            System.”</span>
         In
         <em>Semantic Information Processing</em>,
-                                                            146–226. Cambridge, MA: USA:MIT Press.
+                                                                        146–226. Cambridge, MA: USA:MIT Press.
     </div>
     <div id="ref-mecho" class="csl-entry" role="listitem">
         Bundy, A., L. Byrd, G. Luger, C. Mellish, R. Milne, and M. Palmer. 1979.
         <span>“MECHO: A Program to Solve Mechanics Problems.”</span>
         <em>Department of Artificial Intelligence, University of Edinburgh</em>.
-                                                            https://doi.org/<a href="http://www.worldcat.org/title/mecho-a-program-to-solve-mechanics-problems/oclc/475999217.">
+                                                                        https://doi.org/<a href="http://www.worldcat.org/title/mecho-a-program-to-solve-mechanics-problems/oclc/475999217.">
             http://www.worldcat.org/title/mecho-a-program-to-solve-mechanics-problems/oclc/475999217.</a>
     </div>
     <div id="ref-strips" class="csl-entry" role="listitem">
         Fikes, R. E., and N. J. Nilsson. 1971.
         <span>“Strips: A New Approach to the Application of Theorem Proving to Problem
-            Solving.”</span>
+                        Solving.”</span>
         <em>Artificial Intelligence</em>
         2 (3): 189–208.
         <a href="https://doi.org/10.1016/0004-3702(71)90010-5">https://doi.org/10.1016/0004-3702(71)90010-5</a>.
@@ -975,7 +973,7 @@ limitations of our implementation and proposed future research areas.
     <div id="ref-frust_soc" class="csl-entry" role="listitem">
         Gregorcic, B., and A.-M. Pendrill. 2023.
         <span>“ChatGPT and the
-                                                            Frustrated Socrates.”</span>
+                                                                        Frustrated Socrates.”</span>
         <em>Physics Education</em>
         58 (3): 035021.
         <a href="https://doi.org/10.1088/1361-6552/acc299">https://doi.org/10.1088/1361-6552/acc299</a>.
@@ -983,24 +981,24 @@ limitations of our implementation and proposed future research areas.
     <div id="ref-newton" class="csl-entry" role="listitem">
         Kleer, J. 1977.
         <span>“Multiples Representations of Knowledge in a Mechanics
-            Problem-Solver.”</span>
+                        Problem-Solver.”</span>
         In
         <em>Proceedings of the 5th International Joint Conference on Artificial
-            Intelligence</em>, 1:299–304. USA. San
-            Francisco, CA, USA: Morgan Kaufmann Publishers Inc.
+                        Intelligence</em>, 1:299–304. USA. San
+                        Francisco, CA, USA: Morgan Kaufmann Publishers Inc.
         <a href="https://doi.org/10.1016/B978-1-4832-1447-4.50009-2">https://doi.org/10.1016/B978-1-4832-1447-4.50009-2</a>.
     </div>
     <div id="ref-modern_pwp" class="csl-entry" role="listitem">
         Leszczynski, Megan, and José E. Moreira. 2017.
         <span>“Machine Solver for
-                                                            Physics Word Problems.”</span>
+                                                                        Physics Word Problems.”</span>
         In.
         <a href="https://api.semanticscholar.org/CorpusID:58605280">https://api.semanticscholar.org/CorpusID:58605280</a>.
     </div>
     <div id="ref-mwp_repr" class="csl-entry" role="listitem">
         Mandal, S., and S. K. Naskar. 2019.
         <span>“Solving Arithmetic Mathematical Word Problems: A Review and Recent
-            Advancements.”</span>
+                        Advancements.”</span>
         Edited by P. Chandra, D. Giri, F. Li, S. Kar, and D. K. Jana.
         <em>Information Technology and Applied Mathematics</em>, 95–114.
         <a href="https://doi.org/10.1007/978-981-10-7590-2_7">https://doi.org/10.1007/978-981-10-7590-2_7</a>.
@@ -1008,47 +1006,47 @@ limitations of our implementation and proposed future research areas.
     <div id="ref-other_pwp" class="csl-entry" role="listitem">
         Mukherjee, A., and U. Garain. 2008.
         <span>“A Review of Methods for Automatic Understanding of Natural Language Mathematical
-                                    Problems.”</span>
+            Problems.”</span>
         <em>Artificial Intelligence Review</em>
         29 (2):
-                                        93–122.
+                                                93–122.
         <a href="https://doi.org/10.1007/s10462-009-9110-0">https://doi.org/10.1007/s10462-009-9110-0</a>.
     </div>
     <div id="ref-paip" class="csl-entry" role="listitem">
         Norvig. 1991.
         <em>Paradigms of Artificial Intelligence Programming: Case Studies in Common
-            Lisp</em>. 1st ed. Morgan Kaufmann.
+                        Lisp</em>. 1st ed. Morgan Kaufmann.
         <a href="https://unglueit-files.s3.amazonaws.com/ebf/59f74a93bbc1435c9ca1557b4bb6e9ba.pdf">
             https://unglueit-files.s3.amazonaws.com/ebf/59f74a93bbc1435c9ca1557b4bb6e9ba.pdf</a>.
     </div>
     <div id="ref-isaac" class="csl-entry" role="listitem">
         Novak, G. S., Jr. 1976.
         <span>“Computer Understanding of Physics Problems Stated in Natural
-            Language.”</span>
+                        Language.”</span>
         <em>American Journal of
-                                                            Computational Linguistics</em>.
+                                                                        Computational Linguistics</em>.
         <a href="https://aclanthology.org/J76-3005.">https://aclanthology.org/J76-3005.</a>
     </div>
     <div id="ref-aima" class="csl-entry" role="listitem">
         Russell, S., and P. Norvig. 2009.
         <em>Artificial Intelligence: A Modern
-                                                            Approach</em>. 3rd ed. USA: Prentice Hall Press.
+                                                                        Approach</em>. 3rd ed. USA: Prentice Hall Press.
         <a href="https://people.engr.tamu.edu/guni/csce421/files/AI_Russell_Norvig.pdf">
             https://people.engr.tamu.edu/guni/csce421/files/AI_Russell_Norvig.pdf</a>.
     </div>
     <div id="ref-mwp_nlp" class="csl-entry" role="listitem">
         Zhang, Dongxiang, Lei Wang, Luming Zhang, Bing Tian Dai, and Heng Tao Shen. 2020.
         <span>“The Gap of Semantic Parsing: A Survey on Automatic Math Word Problem
-            Solvers.”</span>
-        <em>IEEE Transactions on Pattern
-                                                            Analysis and Machine Intelligence</em>
+                        Solvers.”</span>
+        <em>IEEE Transactions on Pattern Analysis and Machine
+            Intelligence</em>
         42 (9): 2287–2305.
         <a href="https://doi.org/10.1109/TPAMI.2019.2914054">https://doi.org/10.1109/TPAMI.2019.2914054</a>.
     </div>
     <div id="ref-ukr_ph_1" class="csl-entry" role="listitem">
         Гельфгат, І. 2009.
         <em>Фізика. 7 Клас: Збірник Задач</em>. 4th ed.
-                                                            Веста.
+                                                                        Веста.
     </div>
     <div id="ref-ukr_ph_2" class="csl-entry" role="listitem">
         Ненашев, І. 2011.
